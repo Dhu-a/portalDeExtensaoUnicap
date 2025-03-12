@@ -12,22 +12,9 @@ Este projeto tem como objetivo a criação de um portal para a gestão de projet
 - **Detalhes do Projeto**: Usuários podem visualizar detalhes completos de um projeto, incluindo responsáveis, links e formulários de inscrição.
 - **Previsão de Vagas**: Exibe previsão de quando novas vagas estarão disponíveis em projetos lotados.
 
-## Tecnologias Utilizadas
-- **Django**: Framework Python para desenvolvimento do back-end.
-- **React**: Biblioteca JavaScript para a construção da interface do usuário.
-- **SQLite**: Banco de dados leve para armazenamento de informações.
-- **HTML/CSS**: Para estruturação e estilização das páginas.
-- **Docker**: Contêinerização do ambiente de desenvolvimento e produção.
-- **Figma**: Ferramenta para prototipação de UI/UX.
+## Como Rodar o Projeto
 
-## Equipe
-- Gabriela R. B. Lemos
-- Júlia Silva Souto
-- Maria Luíza Ribeiro de Lima
-- Roberto Regis Neto
-- Matheus Veríssimo Rodrigues Pinheiro
-- Victor Hugo José Sales da Silva
-- Vinícius Martins Galindo Andrade
+No momento, é possível acessar o nosso [protótipo](https://www.figma.com/proto/SffEWbM32E7LhzQg6oWerS/Untitled?node-id=0-1&p=f&t=UEsbyzPm47m1kVgf-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=236%3A6072&show-proto-sidebar=1).
 
 ## Histórias de Usuário
 - [ ] 1. Como administrador, desejo realizar login para poder executar tarefas administrativas.
@@ -47,6 +34,11 @@ Este projeto tem como objetivo a criação de um portal para a gestão de projet
 3. 07/05 - Funcionalidades das histórias 4, 5, 6, 7 e 8 (Filtros por tema, local, horário, busca e vagas).
 4. 03/06 - Funcionalidades das histórias 9 e 10 (Detalhes de projetos e previsão de vagas) e testes finais.
 
-## Como Rodar o Projeto
-
-No momento, é possível acessar o nosso [protótipo](https://www.figma.com/proto/SffEWbM32E7LhzQg6oWerS/Untitled?node-id=0-1&p=f&t=UEsbyzPm47m1kVgf-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=236%3A6072&show-proto-sidebar=1).
+## Equipe
+- Gabriela R. B. Lemos
+- Júlia Silva Souto
+- Maria Luíza Ribeiro de Lima
+- Roberto Regis Neto
+- Matheus Veríssimo Rodrigues Pinheiro
+- Victor Hugo José Sales da Silva
+- Vinícius Martins Galindo Andrade
