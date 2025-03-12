@@ -32,16 +32,27 @@ No momento, é possível acessar o nosso [protótipo](https://www.figma.com/prot
 - [ ] 10. Como usuário, desejo saber quando mais vagas estarão disponíveis em projetos lotados.
 
 ## Entregas
-1. 12/03 - Protótipo completo e histórias de usuário.
-2. 09/04 - Funcionalidades das histórias 1, 2 e 3 (Login, gerenciamento e visualização).
-3. 07/05 - Funcionalidades das histórias 4, 5, 6, 7 e 8 (Filtros por tema, local, horário, busca e vagas).
-4. 03/06 - Funcionalidades das histórias 9 e 10 (Detalhes de projetos e previsão de vagas) e testes finais.
+- 12/03 - Protótipo completo e histórias de usuário.
+- 09/04 - Funcionalidades das histórias 1, 2 e 3 (Login, gerenciamento e visualização).
+- 07/05 - Funcionalidades das histórias 4, 5, 6, 7 e 8 (Filtros por tema, local, horário, busca e vagas).
+- 03/06 - Funcionalidades das histórias 9 e 10 (Detalhes de projetos e previsão de vagas) e testes finais.
 
-## Equipe
-- Gabriela R. B. Lemos
-- Júlia Silva Souto
-- Maria Luíza Ribeiro de Lima
-- Roberto Regis Neto
-- Matheus Veríssimo Rodrigues Pinheiro
-- Victor Hugo José Sales da Silva
-- Vinícius Martins Galindo Andrade
+<h2>Créditos</h2>
+
+<h3>Contribuidores</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/GabrielaRBLemos"><img src="https://github.com/GabrielaRBLemos.png" width="auto" height="8.25%"/><br>Gabriela R. B. Lemos</a></td>
+      <td align="center"><a href="https://github.com/mlrlima/"><img src="https://github.com/mlrlima.png" width="auto" height="8.25%"/><br>Maria Luiza Lima</a></td>
+      <td align="center"><a href="https://github.com/nodemi-alt"><img src="https://github.com/nodemi-alt.png" width="auto" height="8.25%"/><br>Matheus Veríssimo</td>
+      <td align="center"><a href="https://github.com/JuliaSilva05"><img src="https://github.com/JuliaSilva05.png" width="auto" height="8.25%"/><br>Júlia Silva Souto</td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/Roberto20deluxe/"><img src="https://github.com/Roberto20deluxe.png" width="auto" height="8.25%"/><br>Roberto Regis</a></td>
+      <td align="center"><a href="https://github.com/VictorHugoJSS"><img src="https://github.com/VictorHugoJSS.png" width="auto" height="8.25%"/><br>Victor Hugo José Sales da Silva</a></td>
+      <td align="center"><a href="https://github.com/vini-mgan"><img src="https://github.com/vini-mgan.png" width="auto" height="8.25%"/><br>Vinícius Martins</a></td>
+    </tr>
+  </tbody>
+</table>
