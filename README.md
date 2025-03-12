@@ -1,4 +1,7 @@
-# Portal de Projetos de Extensão
+
+<h1 align="center">Portal de Projetos de Extensão</h1>
+
+<p align="center"><img alt="Figma Badge" src="https://img.shields.io/badge/made_with-figma-FF3B00?logo=Figma&logoColor=white"><img alt="Python Badge" src="https://img.shields.io/badge/made_with-python-3776AB?logo=Python&logoColor=white"><img alt="Django Badge" src="https://img.shields.io/badge/made_with-django-092E20?logo=Django&logoColor=white"><img alt="SQLite Badge" src="https://img.shields.io/badge/made_with-sqlite-003B57?logo=SQLite&logoColor=white"><img alt="SQLite Badge" src="https://img.shields.io/badge/made_with-docker-2496ED?logo=Docker&logoColor=white"></p>
 
 ## Descrição
 Este projeto tem como objetivo a criação de um portal para a gestão de projetos de extensão universitária, facilitando tanto o gerenciamento administrativo quanto a busca e participação de usuários em projetos. O portal permitirá aos administradores gerenciar projetos e aos usuários filtrar, buscar e visualizar projetos com base em diferentes critérios.
