@@ -41,10 +41,10 @@ class dias(models.Model):
 class areas(models.Model):
     id=models.BigAutoField(primary_key=True)
     id_projeto=models.ForeignKey('projeto', on_delete=models.CASCADE)
-    area=models.TextField()
+    area=models.TextField(max_length=150, blank=False, null=False)
 
 
 class adm(models.Model):
     id=models.BigAutoField(primary_key=True)
     email=models.TextField(max_length=150, blank=False, null=False)
-    senha=models.TextField()
+    senha=models.TextField(max_length=150, blank=False, null=False)
