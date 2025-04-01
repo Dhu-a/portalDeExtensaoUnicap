@@ -80,20 +80,6 @@ button{
     justify-content: center;
 }
 
-.btn-new-project, .btn-table-mode {
-    text-decoration: none;
-    background-color: var(--accent-color);
-    color: var(--white);
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: bold;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-}
-
 /* FILTROS*/
 
 .admin-menu {

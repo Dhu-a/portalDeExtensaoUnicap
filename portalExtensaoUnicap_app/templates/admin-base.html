@@ -1,30 +1,36 @@
 {% extends 'base.html' %} {% block conteudo %} {% load static %}
 <div class="admin-menu">
-
-    <div class="actions-container">
-        <a href="#" class="btn-new-project"><img src="{% static 'graphics/plus.svg' %}" /> Novo Projeto</a>
-		<a href="#" class="btn-table-mode">
-			<span class="icon"><img src="{% static 'graphics/eye.svg' %}" /></span>
-			Modo Tabela
+	<div class="actions-container">
+		<a href="{%url create%}">
+			<button type="button">
+				<img src="{% static 'graphics/plus.svg' %}" /> Novo Projeto
+			</button>
 		</a>
-    </div>
+		<button type="button">
+			<img src="{% static 'graphics/eye.svg' %}" /> Modo Tabela
+		</button>
+	</div>
 
-    <div class="filters">
-        <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" placeholder="Nome">
-        </div>
-        <div class="filter-dropdown">
-            <span class="area-icon"><img src="{% static 'graphics/area.svg' %}" /></span>
-            <select>
-                <option value="">Área</option>
-                <option value="1">Área 1</option>
-                <option value="2">Área 2</option>
-                <option value="3">Área 3</option>
-            </select>
-        </div>
+	<div class="filters">
+		<div class="search-box">
+			<span class="search-icon">🔍</span>
+			<input type="text" placeholder="Nome" />
+		</div>
 		<div class="filter-dropdown">
-			<span class="curso-icon"><img src="{% static 'graphics/school.svg' %}" /></span>
+			<span class="area-icon"
+				><img src="{% static 'graphics/area.svg' %}"
+			/></span>
+			<select>
+				<option value="">Área</option>
+				<option value="1">Área 1</option>
+				<option value="2">Área 2</option>
+				<option value="3">Área 3</option>
+			</select>
+		</div>
+		<div class="filter-dropdown">
+			<span class="curso-icon"
+				><img src="{% static 'graphics/school.svg' %}"
+			/></span>
 			<select>
 				<option value="">Curso</option>
 				<option value="1">Medicina</option>
@@ -32,37 +38,43 @@
 				<option value="3">Computação</option>
 			</select>
 		</div>
-        <div class="filter-dropdown">
-            <span class="shift-icon"><img src="{% static 'graphics/shift.svg' %}" /></span>
-            <select>
-                <option value="">Turno</option>
-                <option value="manha">Manhã</option>
-                <option value="tarde">Tarde</option>
-                <option value="noite">Noite</option>
-            </select>
-        </div>
-        <div class="filter-dropdown">
-            <span class="days-icon"><img src="{% static 'graphics/calendar.svg' %}" /></span>
-            <select>
-                <option value="">Dias</option>
-                <option value="seg">Segunda</option>
-                <option value="ter">Terça</option>
-                <option value="qua">Quarta</option>
-                <option value="qui">Quinta</option>
-                <option value="sex">Sexta</option>
-            </select>
-        </div>
-        <div class="filter-dropdown">
-            <span class="location-icon"><img src="{% static 'graphics/place.svg' %}" /></span>
-            <select>
-                <option value="">Local</option>
-                <option value="bloco-a">Bloco A</option>
-                <option value="bloco-b">Bloco B</option>
-                <option value="bloco-c">Bloco C</option>
+		<div class="filter-dropdown">
+			<span class="shift-icon"
+				><img src="{% static 'graphics/shift.svg' %}"
+			/></span>
+			<select>
+				<option value="">Turno</option>
+				<option value="manha">Manhã</option>
+				<option value="tarde">Tarde</option>
+				<option value="noite">Noite</option>
+			</select>
+		</div>
+		<div class="filter-dropdown">
+			<span class="days-icon"
+				><img src="{% static 'graphics/calendar.svg' %}"
+			/></span>
+			<select>
+				<option value="">Dias</option>
+				<option value="seg">Segunda</option>
+				<option value="ter">Terça</option>
+				<option value="qua">Quarta</option>
+				<option value="qui">Quinta</option>
+				<option value="sex">Sexta</option>
+			</select>
+		</div>
+		<div class="filter-dropdown">
+			<span class="location-icon"
+				><img src="{% static 'graphics/place.svg' %}"
+			/></span>
+			<select>
+				<option value="">Local</option>
+				<option value="bloco-a">Bloco A</option>
+				<option value="bloco-b">Bloco B</option>
+				<option value="bloco-c">Bloco C</option>
 				<option value="bloco-c">Bloco D</option>
-            </select>
-        </div>
-    </div>
+			</select>
+		</div>
+	</div>
 </div>
 <div class="project-listing">{% block projetos %} {% endblock %}</div>
 {% endblock %}

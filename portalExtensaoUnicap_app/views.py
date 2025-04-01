@@ -7,3 +7,6 @@ def PortalExtensaoView(request):
 
 def AdminPageView(request):
     return render(request, 'admin-cards.html')
+
+def Create(request):
+    return render(request, 'create.html')
