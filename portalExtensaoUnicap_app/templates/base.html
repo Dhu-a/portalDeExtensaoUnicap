@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'style.css' %}" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FlavourIt</title>
+		<meta
+			name="description"
+			content="Create incredible dishes with ingredients you already have at home." />
+		<meta name="author" content="G" />
+		<link
+			rel="icon"
+			type="readme_graphics/x-icon"
+			href="readme_graphics/favicon.ico" />
+	</head>
+	<body class="">
+		<nav>
+			<div class="left-nav">
+				<img
+					src="{% static 'graphics/extensao-marca-gomos-cor.png.svg' %}"
+					alt="Menu" />
+				<h1>Portal de Projetos de Extensão</h1>
+			</div>
+			<div class="right-nav">
+				<button type="button">Sou Administrador</button>
+			</div>
+		</nav>
+		<main>{% block conteudo %} {% endblock %}</main>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'flavourit/base.html' %} {% block conteudo %}
+<div class="admin-menu">
+	<button type="button">
+		<img src="{% static 'graphics/plus.svg' %}" /> Novo Projeto
+	</button>
+	<button type="button">
+		<img src="{% static 'graphics/eye.svg' %}" /> Modo Tabela
+	</button>
+	<div class="filters"></div>
+</div>
+{% endblock %}
