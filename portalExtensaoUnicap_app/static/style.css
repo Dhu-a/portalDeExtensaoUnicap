@@ -1,69 +1,174 @@
 :root{
     --main-color:#690013;
     --accent-color:#9D7628;
-    --text-color:#fff;
-    --text-size:1em;
-    --h1-size:2.3em;
-    --border-radius:28px;/*no site da católica tpa assim*/
+    --white: #fefffe;
 }
-h1 {
-    font-size: var(--h1-size);
-}
-h2 {
-    font-size: 1.8em;
-}
-h3 {
-    font-size: 1.47em;
-}
-h4 {
-    font-size: 1.3em;
-}
-h1,h2,h3,h4{
-    font-family: 'Roboto', sans-serif;
-}
-body{
-    font-size: var(--text-size);
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-nav h1{
-    color: var(--text-color);
-    margin: 0;
-    font-weight: normal;
-}
-nav{
+
+/* HEADER*/
+
+header {
     background-color: var(--main-color);
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: fit-content;
+    padding: 0.5rem 1rem;
+    color: var(--white);
+    border-bottom: 2px solid var(--accent-color);
 }
-.left-nav{
+
+.header-container {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-start;
-    flex-grow: 1;
-    padding-left: 4vw;
+    max-width: 1400px;
+    margin: 0 auto;
 }
-.right-nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:flex-end;
-    flex-grow: 1;
-    padding-right: 4vw;
+
+.logo img {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
 }
-#logo{
-    height: calc(var(--h1-size)*2);
-}
+
 button{
     background-color: var(--accent-color);
-    padding: calc(var(--text-size)) calc(var(--text-size)*4) calc(var(--text-size)) calc(var(--text-size)*4);
-    border: none;
-    border-radius: var(--border-radius);
-    color: var(--text-color);
+}
+
+.btn-admin {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* ACOES */
+
+.actions-container {
     display: flex;
-    direction: row;
-    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
     justify-content: center;
+}
+
+.btn-new-project, .btn-table-mode {
+    text-decoration: none;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* FILTROS*/
+
+.admin-menu {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    background-color: var(--main);
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-box, .filter-dropdown {
+    background-color: var(--white);
+    padding: 0.75rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--accent-color);
+    min-width: 180px;
+}
+
+.search-box input, .filter-dropdown select {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1rem;
+    width: 100%;
+    color: #333;
+}
+
+.filter-dropdown select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 20px;
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right center;
+    background-size: 1em;
+}
+
+/* GRID DE PROJETOS */
+
+.projects-grid {
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    margin: 0;
+    padding: 2rem 1rem;
+    background-color: var(--main-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid var(--accent-color);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.project-card h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.professor {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.tag {
+    background-color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #333;
+    border: 2px solid var(--accent-color);
 }
