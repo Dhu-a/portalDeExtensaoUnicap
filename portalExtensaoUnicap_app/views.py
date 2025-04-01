@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def PortalExtensaoView(request):
     return render(request, 'base.html')
+
+def AdminPageView(request):
+    return render(request, 'admin-base.html')

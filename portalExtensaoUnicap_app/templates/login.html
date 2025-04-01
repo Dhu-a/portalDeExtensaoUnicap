@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block conteudo %} {% load static %}
+<form>
+	<h2>Log In</h2>
+	<div class="input-container">
+		<label for="email">Email</label>
+		<input type="email" name="email" />
+	</div>
+	<div class="input-container">
+		<label for="password">Senha</label>
+		<input type="password" name="password" />
+	</div>
+	<button type="button">Entrar</button>
+</form>
+{% endblock %}
