@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from portalExtensaoUnicap_app import views
 
 urlpatterns = [
+    path('', views.PortalExtensaoView, name='menu'),
     path('admin/', admin.site.urls),
 ]
