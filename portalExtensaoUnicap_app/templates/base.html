@@ -24,7 +24,9 @@
 				<h1>Portal de Projetos de Extensão</h1>
 			</div>
 			<div class="right-nav">
-				<button type="button">Sou Administrador</button>
+				<form action="{% url 'admin' %}">
+					<button type="submit">Sou Administrador</button>
+				</form>
 			</div>
 		</nav>
 		<main>{% block conteudo %} {% endblock %}</main>
