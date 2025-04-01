@@ -1,11 +1,16 @@
 :root{
     --main-color:#690013;
     --accent-color:#9D7628;
+    --text-color:#fff;
+}
+nav h1{
+    color: var(--text-color);
 }
 nav{
     display: flex;
     flex-direction: row;
     width: 100vw;
+    background-color: var(--main-color);
 }
 .left-nav{
     display: flex;
