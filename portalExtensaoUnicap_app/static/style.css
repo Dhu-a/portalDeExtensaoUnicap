@@ -154,7 +154,7 @@ button{
 }
 
 .project-card {
-    background-color: var(--white);
+    background-color: var(--text-color);
     border-radius: 10px;
     padding: 1.5rem;
     border: 2px solid var(--accent-color);
