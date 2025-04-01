@@ -20,5 +20,5 @@ from portalExtensaoUnicap_app import views
 
 urlpatterns = [
     path('', views.PortalExtensaoView, name='menu'),
-    path('admin/', admin.site.urls),
+    path('admin', views.AdminPageView, name='admin'),
 ]
