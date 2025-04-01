@@ -1,4 +1,48 @@
-{% extends 'portalExtensaoUnicap/base.html' %} {% block conteudo %} {% load
-static %}
-<div class="basic-info"></div>
+{% extends 'base.html' %} {% block conteudo %} {% load static %}
+<div class="basic-info">
+	<h2>Lorem Ipsum</h2>
+	<p>Dr. Prof. Lorem Ipsum de Sá</p>
+	<div class="tag-container">
+		<div class="tag">
+			<img src="{% static 'graphics/school.svg' %}" />
+			<p>Placeholder</p>
+		</div>
+	</div>
+</div>
+<div class="extra-info">
+	<img />
+	<div class="right-extra-info">
+		<div class="proposition">
+			<h3>Proposta</h3>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+				veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+				commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+				velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+				occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+				mollit anim id est laborum.
+			</p>
+		</div>
+		<div class="contact">
+			<h3>Informações para Contato</h3>
+			<a class="contact-link" id="wpp-link">
+				<img src="brand-whatsapp.svg" />
+				<p>Grupo de WhatsApp</p>
+			</a>
+			<a class="contact-link" id="wpp-link">
+				<img src="brand-instagram.svg" />
+				<p>Perfil do Instagram</p>
+			</a>
+			<a class="contact-link" id="wpp-link">
+				<img src="forms.svg" />
+				<p>Formulário de Inscrição</p>
+			</a>
+			<a class="contact-link" id="email-link">
+				<img src="mail.svg" />
+				<p>Email para contato</p>
+			</a>
+		</div>
+	</div>
+</div>
 {% endblock %}

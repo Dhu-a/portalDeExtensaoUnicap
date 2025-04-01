@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block conteudo %} {% load static %}
+<form>
+	<h2>Crie um novo projeto</h2>
+	<div class="input-container">
+		<label for="project-name">Nome do Projeto </label>
+		<input type="text" name="project-name" />
+	</div>
+	<div class="input-container">
+		<label for="professor-name">Professor Responsável</label>
+		<input type="text" name="professor-name" />
+	</div>
+	<div class="input-container">
+		<select name="degree">
+			<option value="Medicina"></option>
+			<option value="Ciência da Computação"></option>
+			<option value="Arquitetura"></option>
+		</select>
+	</div>
+	<button type="button">Criar</button>
+</form>
+{% endblock %}

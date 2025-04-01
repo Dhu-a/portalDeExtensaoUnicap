@@ -1,5 +1,4 @@
-{% extends 'portalExtensaoUnicap/base.html' %} {% block conteudo %} {% load
-static %}
+{% extends 'base.html' %} {% block conteudo %} {% load static %}
 <div class="admin-menu">
 	<button type="button">
 		<img src="{% static 'graphics/plus.svg' %}" /> Novo Projeto
@@ -11,37 +10,43 @@ static %}
 		<div class="filters"><input type="search" /></div>
 		<div class="select-container">
 			<img src="{% static 'graphics/school.svg' %}" />
-			<p>Curso</p>
-			<select>
+			<label for="degree">Curso</label>
+			<select name="degree">
 				<option value="Medicina"></option>
 				<option value="Ciência da Computação"></option>
 				<option value="Arquitetura"></option>
 			</select>
-			<select>
+			<select name="degree">
 				<option value="Medicina"></option>
 				<option value="Ciência da Computação"></option>
-				<option value="Arquitetura"></option></select
-			><select>
+				<option value="Arquitetura"></option>
+			</select>
+			<select name="degree">
 				<option value="Medicina"></option>
 				<option value="Ciência da Computação"></option>
-				<option value="Arquitetura"></option></select
-			><select>
+				<option value="Arquitetura"></option>
+			</select>
+			<select name="degree">
 				<option value="Medicina"></option>
 				<option value="Ciência da Computação"></option>
-				<option value="Arquitetura"></option></select
-			><select>
+				<option value="Arquitetura"></option>
+			</select>
+			<select name="degree">
 				<option value="Medicina"></option>
 				<option value="Ciência da Computação"></option>
-				<option value="Arquitetura"></option></select
-			><select>
+				<option value="Arquitetura"></option>
+			</select>
+			<select name="degree">
 				<option value="Medicina"></option>
 				<option value="Ciência da Computação"></option>
-				<option value="Arquitetura"></option></select
-			><select>
+				<option value="Arquitetura"></option>
+			</select>
+			<select name="degree">
 				<option value="Medicina"></option>
 				<option value="Ciência da Computação"></option>
-				<option value="Arquitetura"></option></select
-			><select>
+				<option value="Arquitetura"></option>
+			</select>
+			<select name="degree">
 				<option value="Medicina"></option>
 				<option value="Ciência da Computação"></option>
 				<option value="Arquitetura"></option>
