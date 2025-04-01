@@ -16,19 +16,17 @@
 			href="readme_graphics/favicon.ico" />
 	</head>
 	<body class="">
-		<header>
-			<div class="header-container">
-				<div class="logo">
-					<img
+		<nav>
+			<div class="left-nav">
+				<img
 					src="{% static 'graphics/extensao-marca-gomos-cor.png' %}"
-					alt="Menu" />
-				</div>
+					id="logo" />
 				<h1>Portal de Projetos de Extensão</h1>
-				<div class="admin-button">
-					<button class="btn-admin">Sou Administrador</button>
-				</div>
 			</div>
-		</header>
+			<div class="right-nav">
+				<button type="button">Sou Administrador</button>
+			</div>
+		</nav>
 		<main>{% block conteudo %} {% endblock %}</main>
 	</body>
 </html>
