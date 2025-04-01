@@ -46,5 +46,5 @@ class areas(models.Model):
 
 class adm(models.Model):
     id=models.BigAutoField(primary_key=True)
-    email=models.TextField()
+    email=models.TextField(max_length=150, blank=False, null=False)
     senha=models.TextField()
