@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block conteudo %} {% load static %}
 <div class="admin-menu">
 	<div class="actions-container">
-		<a href="{%url create%}">
+		<a href="{% url 'create' %}">
 			<button type="button">
 				<img src="{% static 'graphics/plus.svg' %}" /> Novo Projeto
 			</button>
