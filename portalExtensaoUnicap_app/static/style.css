@@ -1,0 +1,28 @@
+:root{
+    --main-color:#690013;
+    --accent-color:#9D7628;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+.left-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    padding-left: 4vw;
+}
+.right-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-end;
+    flex-grow: 1;
+    padding-right: 4vw;
+}
+button{
+    background-color: var(--accent-color);
+}
