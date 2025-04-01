@@ -1,5 +1,6 @@
 from django.db import models
 from django.templatetags.static import static
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class projeto(models.Model):
     id=models.BigAutoField(primary_key=True)
@@ -32,9 +33,9 @@ class dias(models.Model):
     id=models.BigAutoField(primary_key=True)
     id_projeto=models.ForeignKey('projeto', on_delete=models.CASCADE)
 
-    dia=models.IntegerField(); # 1==dom, 2==seg, etc, 7==sab
-    turno=models.IntegerField(); # 1==dia, 2==tarde, 3==noite
-    lugar=models.TextField()
+    dia=models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(7)]); # 1==dom, 2==seg, etc, 7==sab
+    turno=models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(3)]); # 1==dia, 2==tarde, 3==noite
+    lugar=models.TextField(max_length=300, blank=False, null=False)
 
 
 class areas(models.Model):
