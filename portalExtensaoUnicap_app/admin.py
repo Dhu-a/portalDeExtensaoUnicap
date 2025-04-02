@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import projeto, dias, areas, adm;
+from portalExtensaoUnicap_app.models import projeto, dias, areas, adm;
 
 # Register your models here.
 admin.site.register(projeto)
