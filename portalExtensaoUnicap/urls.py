@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin', views.AdminPageView, name='admin'),
     path('create', views.Create, name='create'),
     path('login', views.LoginView, name='login'),
+    path('projeto/<int:projeto_id>', views.ProjectView, name='project'),
 ]
