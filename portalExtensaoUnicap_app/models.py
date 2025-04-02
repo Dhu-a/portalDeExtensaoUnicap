@@ -31,7 +31,7 @@ class projeto(models.Model):
 
 class dias(models.Model):
     id=models.BigAutoField(primary_key=True)
-    id_projeto=models.ForeignKey('projeto', on_delete=models.CASCADE)
+    id_projeto=models.ForeignKey(projeto, on_delete=models.CASCADE)
 
     dia=models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(7)]); # 1==dom, 2==seg, etc, 7==sab
     turno=models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(3)]); # 1==dia, 2==tarde, 3==noite
@@ -40,7 +40,7 @@ class dias(models.Model):
 
 class areas(models.Model):
     id=models.BigAutoField(primary_key=True)
-    id_projeto=models.ForeignKey('projeto', on_delete=models.CASCADE)
+    id_projeto=models.ForeignKey(projeto, on_delete=models.CASCADE)
     area=models.TextField(max_length=150, blank=False, null=False)
 
 
