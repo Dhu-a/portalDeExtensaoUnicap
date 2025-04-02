@@ -1,14 +1,16 @@
 {% extends 'base.html' %} {% block conteudo %} {% load static %}
 <div class="admin-menu">
 	<div class="actions-container">
-		<a href="{%url create%}">
+		<a href="{% url 'create' %}">
 			<button type="button">
 				<img src="{% static 'graphics/plus.svg' %}" /> Novo Projeto
 			</button>
 		</a>
-		<button type="button">
-			<img src="{% static 'graphics/eye.svg' %}" /> Modo Tabela
-		</button>
+		<a href="{% url 'admin-table' %}" id="admin-mode-link">
+			<button type="button" id="admin-mode-button">
+				<img src="{% static 'graphics/eye.svg' %}" /> Modo Tabela
+			</button>
+		</a>
 	</div>
 
 	<div class="filters">

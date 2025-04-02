@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.PortalExtensaoView, name='menu'),
     path('admin', views.AdminPageView, name='admin'),
     path('create', views.Create, name='create'),
+    path('admin-table', views.AdminTable, name='admin-table'),
 ]

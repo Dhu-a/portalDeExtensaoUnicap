@@ -3,13 +3,10 @@ from django.shortcuts import render
 # Create your views here.
 
 def PortalExtensaoView(request):
-    return render(request, 'admin-cards.html')
-
+    return render(request, 'admin-cards.html',{'current_page':'admin-cards'})
 def AdminPageView(request):
-    return render(request, 'admin-cards.html')
-
-<<<<<<< HEAD
+    return render(request, 'admin-cards.html',{'current_page':'admin-cards'})
+def AdminTable(request):
+    return render(request, 'admin-table.html',{'current_page':'admin-table'})
 def Create(request):
-    return render(request, 'create.html')
-=======
->>>>>>> 7bcc98fa5e5d1588a29ca0199ee75b802f71e1a8
+    return render(request, 'create.html',{'current_page':'create'})

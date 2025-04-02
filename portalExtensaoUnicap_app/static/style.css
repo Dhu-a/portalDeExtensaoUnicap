@@ -69,6 +69,7 @@ button{
     direction: row;
     align-items: center;
     justify-content: center;
+    gap:var(--text-size);
 }
 
 /* ACOES */
@@ -83,7 +84,7 @@ button{
 /* FILTROS*/
 
 .admin-menu {
-    max-width: 1400px;
+    width: 1400px;
     margin: 2rem auto;
     padding: 0 2rem;
     background-color: var(--main);
@@ -98,7 +99,7 @@ button{
 }
 
 .search-box, .filter-dropdown {
-    background-color: var(--white);
+    background-color: var(--text-color);
     padding: 0.75rem;
     border-radius: 4px;
     display: flex;
@@ -176,7 +177,7 @@ button{
 }
 
 .tag {
-    background-color: var(--white);
+    background-color: var(--text-color);
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-size: 0.9rem;
