@@ -22,5 +22,10 @@ urlpatterns = [
     path('', views.PortalExtensaoView, name='menu'),
     path('admin', views.AdminPageView, name='admin'),
     path('create', views.Create, name='create'),
+<<<<<<< HEAD
     path('admin-table', views.AdminTable, name='admin-table'),
+=======
+    path('login', views.LoginView, name='login'),
+    path('projeto/<int:projeto_id>', views.ProjectView, name='project'),
+>>>>>>> 8777e050635551e94f5caee5a7f003a8702546f5
 ]
