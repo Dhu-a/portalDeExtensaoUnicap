@@ -30,5 +30,10 @@ def LoginView(request):
     return render(request, 'login.html')
 
 def ProjectView(request, projeto_id):
-    projeto_detail = get_object_or_404(projeto, id=projeto_id)
+    if request.method == "GET":
+        try:
+            projeto_detail = project.objects.filter(id=projeto_id)
+        except ObjectDoesNotExist:
+            messages.error(request, 'Projeto não encontrado')
+            redirect('project')
     return render(request, 'project.html', {'projeto': projeto_detail})
