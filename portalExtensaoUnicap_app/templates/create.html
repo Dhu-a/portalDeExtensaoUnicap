@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block conteudo %} {% load static %}
-<form>
+<form action="{% url 'base' %}" method="post">
 	<h2>Crie um novo projeto</h2>
 	<div class="input-container">
 		<label for="project-name">Nome do Projeto </label>
@@ -10,11 +10,48 @@
 		<input type="text" name="professor-name" />
 	</div>
 	<div class="input-container">
+		<label for="proposal">Proposta</label>
+		<textarea name="proposal"> </textarea>
+	</div>
+	<div class="input-container">
 		<select name="degree">
-			<option value="Medicina"></option>
-			<option value="Ciência da Computação"></option>
-			<option value="Arquitetura"></option>
+			<option value="Medicina">Medicina</option>
+			<option value="Ciência da Computação">Ciência da Computação</option>
+			<option value="Arquitetura">Arquitetura</option>
 		</select>
+	</div>
+	<div class="input-container">
+		<label for="total-hours">Carga Horária Total</label>
+		<input type="number" name="total-hours" />
+	</div>
+	<div class="input-container">
+		<label for="weekly-hours-professor">Carga Horária Semanal Docente</label>
+		<input type="number" name="weekly-hours-professor" />
+	</div>
+	<div class="input-container">
+		<label for="weekly-hours-student">Carga Horária Semanal Estudante</label>
+		<input type="number" name="weekly-hours-student" />
+	</div>
+	<div class="input-container">
+		<label for="start-date">Data de Início</label>
+		<input type="date" name="start-date" />
+	</div>
+	<div class="input-container">
+		<label for="end-date">Data de Término</label>
+		<input type="date" name="end-date" />
+	</div>
+
+	<div class="input-container">
+		<label for="instagram">Instagram</label>
+		<input type="text" name="instagram" />
+	</div>
+	<div class="input-container">
+		<label for="contact">Contato</label>
+		<input type="text" name="contact" />
+	</div>
+	<div class="input-container">
+		<label for="formulary">Formulário</label>
+		<input type="text" name="formulary" />
 	</div>
 	<button type="button">Criar</button>
 </form>

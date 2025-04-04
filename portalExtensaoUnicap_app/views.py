@@ -37,11 +37,24 @@ def ProjectView(request, projeto_id):
 
 def ProjectCreate(request):
     if request.method == "POST'":
-        nome = request.post['project-name']
-        coordenador = request.post['professor-name']
+        titulo = request.post['project-name']
+        proposta = request.post['proposal']
         curso = request.post['degree']
+        coordenador = request.post['professor-name']
+        ch_total = request.post['total-hours']
+        ch_semanal_docente = request.post['weekly-hours-professor']
+        ch_semanal_estudante = request.post['weekly-hours-student']
+        data_inicio = request.post['start-date']
+        data_termino = request.post['end-date']
+        instagram = request.post['instagram']
+        contato = request.post['contact']
+        formulario = request.post['formulary']
 
-        projeto = projeto(nome=nome,coordenador=coordenador,curso=curso)
-        projeto.save()
+        projetoNovo = projeto(titulo=titulo, proposta=proposta, curso=curso, coordenador=coordenador,
+                            ch_total=ch_total, ch_semanal_docente=ch_semanal_docente, 
+                            ch_semanal_estudante=ch_semanal_estudante, data_inicio=data_inicio,
+                            data_termino=data_termino, instagram=instagram, contato=contato, 
+                            formulario=formulario)
+        projetoNovo.save()
         return redirect('base')
     return render('create.html')
