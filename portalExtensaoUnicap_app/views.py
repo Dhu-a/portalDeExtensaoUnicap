@@ -8,17 +8,13 @@ from .models import projeto
 def PortalExtensaoView(request):
     return render(request, 'admin-cards.html',{'current_page':'admin-cards'})
 def AdminPageView(request):
-<<<<<<< HEAD
     return render(request, 'admin-cards.html',{'current_page':'admin-cards'})
 def AdminTable(request):
     return render(request, 'admin-table.html',{'current_page':'admin-table'})
 def Create(request):
     return render(request, 'create.html',{'current_page':'create'})
-=======
-    return render(request, 'admin-cards.html')
 
-def Create(request):
-    return render(request, 'create.html')
+
 
 
 def LoginView(request):
@@ -36,16 +32,16 @@ def LoginView(request):
     return render(request, 'login.html')
 
 def ProjectView(request, projeto_id):
-<<<<<<< HEAD
     projeto_detail = get_object_or_404(projeto, id=projeto_id)
     return render(request, 'project.html', {'projeto': projeto_detail})
->>>>>>> 8777e050635551e94f5caee5a7f003a8702546f5
-=======
-    if request.method == "GET":
-        try:
-            projeto_detail = project.objects.filter(id=projeto_id)
-        except ObjectDoesNotExist:
-            messages.error(request, 'Projeto não encontrado')
-            redirect('project')
-    return render(request, 'project.html', {'projeto': projeto_detail})
->>>>>>> 93eac0fea790e776ec66755f0d90a73041e934d0
+
+def ProjectCreate(request):
+    if request.method == "POST'":
+        nome = request.post['project-name']
+        coordenador = request.post['professor-name']
+        curso = request.post['degree']
+
+        projeto = projeto(nome=nome,coordenador=coordenador,curso=curso)
+        projeto.save()
+        return redirect('base')
+    return render('create.html')
