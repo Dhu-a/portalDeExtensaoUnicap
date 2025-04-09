@@ -129,6 +129,10 @@ button{
 
 /* GRID DE PROJETOS */
 
+.hidden{
+    display:none;
+}
+
 .projects-grid {
     width: 100%;
     min-height: calc(100vh - 200px);
@@ -138,6 +142,23 @@ button{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
+}
+
+.project-table {
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    margin: 0;
+    padding: 2rem 1rem;
+    background-color: var(--main-color);
+    gap: 1.5rem;
+}
+.tabela{
+    background-color: var(--text-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid var(--accent-color);
+    text-decoration: none;
+    color: inherit;
 }
 
 .project-card {

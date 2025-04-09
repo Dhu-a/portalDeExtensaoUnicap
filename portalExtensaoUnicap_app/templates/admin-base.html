@@ -6,11 +6,9 @@
 				<img src="{% static 'graphics/plus.svg' %}" /> Novo Projeto
 			</button>
 		</a>
-		<a href="{% url 'admin-table' %}" id="admin-mode-link">
-			<button type="button" id="admin-mode-button">
-				<img src="{% static 'graphics/eye.svg' %}" /> Modo Tabela
-			</button>
-		</a>
+		<button type="button" id="admin-mode-button">
+			<img src="{% static 'graphics/eye.svg' %}" /> Modo Tabela
+		</button>
 	</div>
 
 	<div class="filters">
@@ -78,5 +76,26 @@
 		</div>
 	</div>
 </div>
-<div class="project-listing">{% block projetos %} {% endblock %}</div>
+<div class="project-listing">
+	{% block projetos %} {% endblock %}
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const button = document.getElementById("admin-mode-button");
+        const grid = document.getElementById("project-grid");
+        const table = document.getElementById("project-table-container");
+
+        button.addEventListener("click", function () {
+            const showingGrid = (grid.style.display !== "none");
+
+            grid.style.display = showingGrid ? "none" : "grid";
+            table.style.display = showingGrid ? "block" : "none";
+
+            //button.innerHTML = showingGrid ? `<img src="{% static 'graphics/eye.svg' %}" /> Modo Cartões` : `<img src="{% static 'graphics/eye.svg' %}" /> Modo Tabela`;
+        });
+    });
+</script>
+
+
 {% endblock %}
