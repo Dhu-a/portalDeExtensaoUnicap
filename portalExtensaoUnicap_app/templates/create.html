@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block conteudo %} {% load static %}
-<form action="{% url 'base' %}" method="post">
+<form action="{% url 'ProjectCreate' %}" method="post" enctype="multipart/form-data">
 	<h2>Crie um novo projeto</h2>
 	<div class="input-container">
 		<label for="project-name">Nome do Projeto </label>

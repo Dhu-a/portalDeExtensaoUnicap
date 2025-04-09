@@ -12,7 +12,7 @@ def AdminPageView(request):
 #def AdminTable(request):
 #    return render(request, 'admin-table.html',{'current_page':'admin-table'})
 def Create(request):
-    return render(request, 'create.html',{'current_page':'create'})
+    return render(request, 'create.html')
 
 
 
@@ -36,7 +36,7 @@ def ProjectView(request, projeto_id):
     return render(request, 'project.html', {'projeto': projeto_detail})
 
 def ProjectCreate(request):
-    if request.method == "POST'":
+    if request.method == "POST":
         titulo = request.post['project-name']
         proposta = request.post['proposal']
         curso = request.post['degree']
