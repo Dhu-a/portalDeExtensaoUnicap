@@ -37,18 +37,18 @@ def ProjectView(request, projeto_id):
 
 def ProjectCreate(request):
     if request.method == "POST":
-        titulo = request.post['project-name']
-        proposta = request.post['proposal']
-        curso = request.post['degree']
-        coordenador = request.post['professor-name']
-        ch_total = request.post['total-hours']
-        ch_semanal_docente = request.post['weekly-hours-professor']
-        ch_semanal_estudante = request.post['weekly-hours-student']
-        data_inicio = request.post['start-date']
-        data_termino = request.post['end-date']
-        instagram = request.post['instagram']
-        contato = request.post['contact']
-        formulario = request.post['formulary']
+        titulo = request.POST.get('project-name')
+        proposta = request.POST.get('proposal')
+        curso = request.POST.get('degree')
+        coordenador = request.POST.get('professor-name')
+        ch_total = request.POST.get('total-hours')
+        ch_semanal_docente = request.POST.get('weekly-hours-professor')
+        ch_semanal_estudante = request.POST.get('weekly-hours-student')
+        data_inicio = request.POST.get('start-date')
+        data_termino = request.POST.get('end-date')
+        instagram = request.POST.get('instagram')
+        contato = request.POST.get('contact')
+        formulario = request.POST.get('formulary')
 
         projetoNovo = projeto(titulo=titulo, proposta=proposta, curso=curso, coordenador=coordenador,
                             ch_total=ch_total, ch_semanal_docente=ch_semanal_docente, 
@@ -56,5 +56,4 @@ def ProjectCreate(request):
                             data_termino=data_termino, instagram=instagram, contato=contato, 
                             formulario=formulario)
         projetoNovo.save()
-        return redirect('base')
-    return render('create.html')
+    return render(request, 'create.html')

@@ -53,6 +53,8 @@
 		<label for="formulary">Formulário</label>
 		<input type="text" name="formulary" />
 	</div>
-	<button type="button">Criar</button>
+	
+	{% csrf_token %}
+	<button type="submit">Criar</button>
 </form>
 {% endblock %}
