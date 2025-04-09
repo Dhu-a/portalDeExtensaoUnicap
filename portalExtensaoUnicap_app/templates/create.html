@@ -2,6 +2,10 @@
 <form action="{% url 'ProjectCreate' %}" method="post" enctype="multipart/form-data">
 	<h2>Crie um novo projeto</h2>
 	<div class="input-container">
+		<label for="identifier">Identificador </label>
+		<input type="text" name="identifier" />
+	</div>
+	<div class="input-container">
 		<label for="project-name">Nome do Projeto </label>
 		<input type="text" name="project-name" />
 	</div>

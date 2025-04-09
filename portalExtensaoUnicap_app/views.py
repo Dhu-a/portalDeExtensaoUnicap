@@ -37,6 +37,7 @@ def ProjectView(request, projeto_id):
 
 def ProjectCreate(request):
     if request.method == "POST":
+        identificacao_unica = request.POST.get('identifier')
         titulo = request.POST.get('project-name')
         proposta = request.POST.get('proposal')
         curso = request.POST.get('degree')
@@ -50,8 +51,9 @@ def ProjectCreate(request):
         contato = request.POST.get('contact')
         formulario = request.POST.get('formulary')
 
-        projetoNovo = projeto(titulo=titulo, proposta=proposta, curso=curso, coordenador=coordenador,
-                            ch_total=ch_total, ch_semanal_docente=ch_semanal_docente, 
+        projetoNovo = projeto(identificacao_unica=identificacao_unica, titulo=titulo, proposta=proposta, 
+                            curso=curso, coordenador=coordenador,ch_total=ch_total, 
+                            ch_semanal_docente=ch_semanal_docente, 
                             ch_semanal_estudante=ch_semanal_estudante, data_inicio=data_inicio,
                             data_termino=data_termino, instagram=instagram, contato=contato, 
                             formulario=formulario)
