@@ -20,9 +20,9 @@ Este projeto tem como objetivo a criação de um portal para a gestão de projet
 No momento, é possível acessar o nosso [protótipo](https://www.figma.com/proto/SffEWbM32E7LhzQg6oWerS/Untitled?node-id=0-1&p=f&t=UEsbyzPm47m1kVgf-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=236%3A6072&show-proto-sidebar=1).
 
 ## Histórias de Usuário
-- [ ] 1. Como administrador, desejo realizar login para poder executar tarefas administrativas.
-- [ ] 2. Como administrador, desejo poder criar, editar e apagar projetos.
-- [ ] 3. Como administrador, desejo visualizar os projetos em formato de tabela e cards.
+- [x] 1. Como administrador, desejo realizar login para poder executar tarefas administrativas.
+- [x] 2. Como administrador, desejo poder criar, editar e apagar projetos.
+- [x] 3. Como administrador, desejo visualizar os projetos em formato de tabela e cards.
 - [ ] 4. Como usuário, desejo filtrar projetos por tema e área de atuação.
 - [ ] 5. Como usuário, desejo filtrar projetos por local.
 - [ ] 6. Como usuário, desejo filtrar projetos por horário (turno, faixa de horas, dias da semana).
