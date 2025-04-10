@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .models import projeto
+from django.http import HttpResponse
+from django.template import loader
 
 # Create your views here.
 
@@ -59,3 +61,13 @@ def ProjectCreate(request):
                             formulario=formulario)
         projetoNovo.save()
     return render(request, 'create.html')
+
+def ProjectDelete(request):
+    '''
+    minha ideia era ter um botão de delete que mandasse o id do projeto quando fosse clicado,
+    mas não sei se é totalmente viável
+    '''
+    if request.method == 'POST':
+        id_to_be_deleted = request.POST.get('id')
+        projeto.objects.get(id=id_to_be_deleted).delete()
+
