@@ -4,8 +4,9 @@
     --text-color:#fff;
     --text-size:1em;
     --h1-size:2.3em;
-    --border-radius:28px;/*no site da católica tava assim*/
+    --border-radius:28px;
 }
+
 h1 {
     font-size: var(--h1-size);
 }
@@ -21,47 +22,67 @@ h4 {
 h1,h2,h3,h4{
     font-family: 'Roboto', sans-serif;
 }
+
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body{
     font-size: var(--text-size);
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+/* Navegacao */
 nav h1{
     color: var(--text-color);
     margin: 0;
     font-weight: normal;
 }
+
 nav{
     background-color: var(--main-color);
     display: flex;
     flex-direction: row;
     width: 100vw;
+    max-width: 100%;
     height: fit-content;
+    padding: 1rem 0;
 }
+
 .left-nav{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     flex-grow: 1;
-    padding-left: 4vw;
+    padding-left: 2rem;
+    gap: 1rem;
 }
+
 .right-nav{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:flex-end;
+    justify-content: flex-end;
     flex-grow: 1;
-    padding-right: 4vw;
+    padding-right: 2rem;
 }
+
 #logo{
     height: calc(var(--h1-size)*2);
+    max-width: 100%;
+    object-fit: contain;
 }
+
+/* Botoes */
 button{
     background-color: var(--accent-color);
-    padding: calc(var(--text-size)) calc(var(--text-size)*4) calc(var(--text-size)) calc(var(--text-size)*4);
+    padding: calc(var(--text-size)) calc(var(--text-size)*4);
     border: none;
     border-radius: var(--border-radius);
     color: var(--text-color);
@@ -69,22 +90,28 @@ button{
     direction: row;
     align-items: center;
     justify-content: center;
-    gap:var(--text-size);
+    gap: var(--text-size);
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-/* ACOES */
+button:hover {
+    transform: scale(1.05);
+}
 
+/* Acoes */
 .actions-container {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* FILTROS*/
-
+/* Filtros */
 .admin-menu {
-    width: 1400px;
+    width: 100%;
+    max-width: 1400px;
     margin: 2rem auto;
     padding: 0 2rem;
     background-color: var(--main);
@@ -107,6 +134,8 @@ button{
     gap: 0.5rem;
     border: 2px solid var(--accent-color);
     min-width: 180px;
+    flex: 1;
+    max-width: 300px;
 }
 
 .search-box input, .filter-dropdown select {
@@ -127,8 +156,6 @@ button{
     background-size: 1em;
 }
 
-/* GRID DE PROJETOS */
-
 .hidden{
     display:none;
 }
@@ -137,10 +164,10 @@ button{
     width: 100%;
     min-height: calc(100vh - 200px);
     margin: 0;
-    padding: 2rem 1rem;
+    padding: 2rem;
     background-color: var(--main-color);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
@@ -169,6 +196,7 @@ button{
     text-decoration: none;
     color: inherit;
     display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -204,4 +232,29 @@ button{
     font-size: 0.9rem;
     color: #333;
     border: 2px solid var(--accent-color);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .left-nav, .right-nav {
+        padding: 0 1rem;
+        justify-content: center;
+    }
+
+    .left-nav {
+        flex-direction: column;
+    }
+
+    .search-box, .filter-dropdown {
+        min-width: 100%;
+        max-width: 100%;
+    }
 }
