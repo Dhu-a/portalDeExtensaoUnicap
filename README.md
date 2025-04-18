@@ -1,5 +1,5 @@
 
-<h1 align="center">Portal de Projetos de Extensão</h1>
+<h1 align = "center"><img align="center" src="readMeImages/extensao-marca-gomos-cor.png"><br>Portal de Projetos de Extensão - UNICAP</h1>
 
 <p align="center"><img alt="Figma Badge" src="https://img.shields.io/badge/made_with-figma-FF3B00?logo=Figma&logoColor=white"><img alt="Python Badge" src="https://img.shields.io/badge/made_with-python-3776AB?logo=Python&logoColor=white"><img alt="Django Badge" src="https://img.shields.io/badge/made_with-django-092E20?logo=Django&logoColor=white"><img alt="SQLite Badge" src="https://img.shields.io/badge/made_with-sqlite-003B57?logo=SQLite&logoColor=white"><img alt="SQLite Badge" src="https://img.shields.io/badge/made_with-docker-2496ED?logo=Docker&logoColor=white"></p>
 
@@ -20,6 +20,7 @@ Este projeto tem como objetivo a criação de um portal para a gestão de projet
 No momento, é possível acessar o nosso [protótipo](https://www.figma.com/proto/SffEWbM32E7LhzQg6oWerS/Untitled?node-id=0-1&p=f&t=UEsbyzPm47m1kVgf-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=236%3A6072&show-proto-sidebar=1).
 
 ## Histórias de Usuário
+
 - [x] 1. Como administrador, desejo realizar login para poder executar tarefas administrativas.
 - [x] 2. Como administrador, desejo poder criar, editar e apagar projetos.
 - [x] 3. Como administrador, desejo visualizar os projetos em formato de tabela e cards.
@@ -32,6 +33,7 @@ No momento, é possível acessar o nosso [protótipo](https://www.figma.com/prot
 - [ ] 10. Como usuário, desejo saber quando mais vagas estarão disponíveis em projetos lotados.
 
 ## Entregas
+
 - 12/03 - Protótipo completo e histórias de usuário.
 - 09/04 - Funcionalidades das histórias 1, 2 e 3 (Login, gerenciamento e visualização).
 - 07/05 - Funcionalidades das histórias 4, 5, 6, 7 e 8 (Filtros por tema, local, horário, busca e vagas).
