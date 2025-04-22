@@ -69,5 +69,8 @@ def ProjectDelete(request):
     '''
     if request.method == 'POST':
         id_to_be_deleted = request.POST.get('id')
-        projeto.objects.get(id=id_to_be_deleted).delete()
-
+        if id_to_be_deleted != None:
+            projeto.objects.get(id=id_to_be_deleted).delete()
+            projeto.save()
+            return redirect('admin')
+    return AdminPageView(request)
