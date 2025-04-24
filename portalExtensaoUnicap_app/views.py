@@ -8,9 +8,18 @@ from django.template import loader
 # Create your views here.
 
 def PortalExtensaoView(request):
-    return render(request, 'admin-cards.html',{'current_page':'admin-cards'})
+    projetos = projeto.objects.all()
+    return render(request, 'admin-cards.html', {
+        'current_page': 'public-cards',
+        'portalExtensaoUnicap_app_projetos': projetos
+    })
+
 def AdminPageView(request):
-    return render(request, 'admin-cards.html',{'current_page':'admin-cards'})
+    projetos = projeto.objects.all()
+    return render(request, 'admin-cards.html', {
+        'current_page': 'admin-cards',
+        'portalExtensaoUnicap_app_projetos': projetos
+    })
 #def AdminTable(request):
 #    return render(request, 'admin-table.html',{'current_page':'admin-table'})
 def Create(request):
@@ -21,8 +30,8 @@ def Create(request):
 
 def LoginView(request):
     if request.method == "POST":
-        email = request.post['email']
-        password = request.post['password']
+        email = request.POST['email']
+        password = request.POST['password']
         user = authenticate(request=request, email=email, password=password)
 
         if user is not None:
@@ -63,14 +72,9 @@ def ProjectCreate(request):
     return render(request, 'create.html')
 
 def ProjectDelete(request):
-    '''
-    minha ideia era ter um botão de delete que mandasse o id do projeto quando fosse clicado,
-    mas não sei se é totalmente viável
-    '''
     if request.method == 'POST':
         id_to_be_deleted = request.POST.get('id')
-        if id_to_be_deleted != None:
-            projeto.objects.get(id=id_to_be_deleted).delete()
-            projeto.save()
+        if id_to_be_deleted:
+            projeto.objects.filter(id=id_to_be_deleted).delete()
             return redirect('admin')
     return AdminPageView(request)

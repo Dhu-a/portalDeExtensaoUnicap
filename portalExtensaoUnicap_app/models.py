@@ -39,9 +39,9 @@ class dias(models.Model):
 
 
 class areas(models.Model):
-    id=models.BigAutoField(primary_key=True)
-    id_projeto=models.ForeignKey(projeto, on_delete=models.CASCADE)
-    area=models.TextField(max_length=150, blank=False, null=False)
+    id_projeto = models.ForeignKey(projeto, on_delete=models.CASCADE, related_name='areas')
+    area = models.TextField(max_length=150, blank=False, null=False)
+
 
 
 class adm(models.Model):

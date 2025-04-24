@@ -1,139 +1,22 @@
-{% extends 'admin-base.html' %} {% block projetos %} {% load static %}
+{% extends 'admin-base.html' %}
+{% load static %}
+{% block projetos %}
 <div id="project-grid" class="projects-grid">
-
-	<a href="projeto1.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
-
-	<a href="projeto2.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
-
-	<a href="projeto3.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
-
-	<a href="projeto4.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
-
-	<a href="projeto5.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
-
-	<a href="projeto6.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
-
-	<a href="projeto7.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
-
-	<a href="projeto8.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
-
-	<a href="projeto9.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
-
-	<a href="projeto10.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
-	<a href="projeto10.html" class="project-card">
-		<h2>Lorem Ipsum</h2>
-		<p class="professor">Dr. Prof. Lorem Ipsum</p>
-		<div class="tags">
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-			<span class="tag">Placeholder</span>
-		</div>
-	</a>
+    {% for projeto in portalExtensaoUnicap_app_projetos %}
+    <a href="{% url 'project' projeto.id %}" class="project-card">
+        <h2>{{ projeto.titulo }}</h2>
+        <p class="professor">{{ projeto.coordenador }}</p>
+        <div class="tags">
+            {% for area in projeto.areas.all %}
+            <span class="tag">{{ area.area }}</span>
+            {% endfor %}
+        </div>
+    </a>
+    {% empty %}
+    <p style="text-align: center;">Nenhum projeto cadastrado ainda.</p>
+    {% endfor %}
 </div>
 
-<!-- TABLE VIEW (hidden by default) -->
 <div id="project-table-container" class="hidden">
     <table class="project-table">
         <thead class="tabela">
@@ -144,76 +27,20 @@
             </tr>
         </thead>
         <tbody class="tabela">
+            {% for projeto in portalExtensaoUnicap_app_projetos %}
             <tr>
-                <td><h2><a href="projeto1.html">Lorem Ipsum</a></h2></td>
-                <td>Dr. Prof. Lorem Ipsum</td>
+                <td><h2><a href="{% url 'project' projeto.id %}">{{ projeto.titulo }}</a></h2></td>
+                <td>{{ projeto.coordenador }}</td>
                 <td>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
+                    {% for area in projeto.areas.all %}
+                    <span class="tag">{{ area.area }}</span>
+                    {% endfor %}
                 </td>
             </tr>
-            <!-- Add more table rows here... -->
-			<tr>
-                <td><h2><a href="projeto1.html">Lorem Ipsum</a></h2></td>
-                <td>Dr. Prof. Lorem Ipsum</td>
-                <td>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                </td>
-            </tr>
-			<tr>
-                <td><h2><a href="projeto1.html">Lorem Ipsum</a></h2></td>
-                <td>Dr. Prof. Lorem Ipsum</td>
-                <td>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                </td>
-            </tr>
-			<tr>
-                <td><h2><a href="projeto1.html">Lorem Ipsum</a></h2></td>
-                <td>Dr. Prof. Lorem Ipsum</td>
-                <td>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                </td>
-            </tr>
-			<tr>
-                <td><h2><a href="projeto1.html">Lorem Ipsum</a></h2></td>
-                <td>Dr. Prof. Lorem Ipsum</td>
-                <td>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                </td>
-            </tr>
-			<tr>
-                <td><h2><a href="projeto1.html">Lorem Ipsum</a></h2></td>
-                <td>Dr. Prof. Lorem Ipsum</td>
-                <td>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                    <span class="tag">Placeholder</span>
-                </td>
-            </tr>
-
+            {% empty %}
+            <tr><td colspan="3" style="text-align: center;">Nenhum projeto encontrado.</td></tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
-
 {% endblock %}
