@@ -69,6 +69,7 @@ def ProjectCreate(request):
                             data_termino=data_termino, instagram=instagram, contato=contato, 
                             formulario=formulario)
         projetoNovo.save()
+        return redirect('/')
     return render(request, 'create.html')
 
 def ProjectDelete(request):
