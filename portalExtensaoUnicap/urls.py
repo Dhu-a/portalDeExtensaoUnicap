@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin', views.AdminPageView, name='admin'),
     path('create', views.Create, name='create'),
     path('ProjectCreate/', views.ProjectCreate, name='ProjectCreate'),
-
+    
 
     #path('admin-table', views.AdminTable, name='admin-table'),
     path('login', views.LoginView, name='login'),

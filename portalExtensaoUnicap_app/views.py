@@ -43,6 +43,11 @@ def LoginView(request):
     return render(request, 'login.html')
 
 def ProjectView(request, projeto_id):
+    # função de deletar:
+    if request.method == 'GET' and request.GET.get('delete') != None:
+        projeto.objects.filter(id=projeto_id).delete()
+        return redirect('admin')
+    #pág carregando:
     projeto_detail = get_object_or_404(projeto, id=projeto_id)
     return render(request, 'project.html', {'projeto': projeto_detail})
 
@@ -71,11 +76,3 @@ def ProjectCreate(request):
         projetoNovo.save()
         return redirect('/')
     return render(request, 'create.html')
-
-def ProjectDelete(request):
-    if request.method == 'POST':
-        id_to_be_deleted = request.POST.get('id')
-        if id_to_be_deleted:
-            projeto.objects.filter(id=id_to_be_deleted).delete()
-            return redirect('admin')
-    return AdminPageView(request)

@@ -41,6 +41,14 @@
 			</a>
 			{% endif %}
 		</div>
+		<form action="{{projeto.id}}" method="get">
+			{% csrf_token %}
+			<input type="hidden" id="delete" name="delete" value="{{projeto.id}}">
+            <input type="submit" value="Deletar(WIP)"> 
+			<!--
+			<button value="{{projeto.id}}">Deletar(WIP)</button>
+			-->
+		</form>
 	</div>
 </div>
 {% endblock %}
