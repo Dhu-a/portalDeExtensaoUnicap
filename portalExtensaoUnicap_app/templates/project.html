@@ -45,7 +45,7 @@
 		<form action="{{projeto.id}}" method="get" onsubmit="return showWindow()">
 			{% csrf_token %}
 			<input type="hidden" id="delete" name="delete" value="{{projeto.id}}">
-            <input type="submit" value="Deletar">
+			<button type="submit">Deletar</button>
 		</form>
 		<script>
 			function showWindow(){

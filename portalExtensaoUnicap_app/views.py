@@ -46,8 +46,6 @@ def ProjectView(request, projeto_id):
     # função de deletar:
     if request.method == 'GET' and request.GET.get('delete') != None:
         projeto.objects.filter(id=projeto_id).delete()
-        #TODO: Colocar uma confirmação extra aparecendo após clicar o botão (exemplo: algo como "Você 
-        # realmente quer deletar esse projeto?" E opções "Cancelar/Sim")
         return redirect('admin')
     #pág carregando:
     projeto_detail = get_object_or_404(projeto, id=projeto_id)
