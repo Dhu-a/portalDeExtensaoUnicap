@@ -41,11 +41,22 @@
 			</a>
 			{% endif %}
 		</div>
-		<form action="{{projeto.id}}" method="get">
+
+		<form action="{{projeto.id}}" method="get" onsubmit="return showWindow()">
 			{% csrf_token %}
 			<input type="hidden" id="delete" name="delete" value="{{projeto.id}}">
-            <input type="submit" value="Deletar(WIP)">
+            <input type="submit" value="Deletar">
 		</form>
+		<script>
+			function showWindow(){
+				if (window.confirm("Deseja deletar o projeto?") == true){
+					return true;
+				} else {
+					return false;
+				}
+			}
+		</script>
+
 	</div>
 </div>
 {% endblock %}
