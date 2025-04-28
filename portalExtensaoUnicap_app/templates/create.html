@@ -57,7 +57,69 @@
 		<label for="formulary">Formulário</label>
 		<input type="text" name="formulary" />
 	</div>
-	
+	<div>
+		<table>
+            <thead>
+                <tr>
+                    <th>Dia</th>
+                    <th>Manhã</th>
+                    <th>Tarde</th>
+                    <th>Noite</th>
+					<th>Local</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td><label><input type="checkbox" name="schedule" value="Segunda-feira Manhã"> Manhã</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Segunda-feira Tarde"> Tarde</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Segunda-feira Noite"> Noite</label></td>
+                    <td><label><input type="text" name="local"></label></td>
+                </tr>
+                <tr>
+                    <td>Terça-feira</td>
+                    <td><label><input type="checkbox" name="schedule" value="Terça-feira Manhã"> Manhã</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Terça-feira Tarde"> Tarde</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Terça-feira Noite"> Noite</label></td>
+                    <td><label><input type="text" name="local"></label></td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+                    <td><label><input type="checkbox" name="schedule" value="Quarta-feira Manhã"> Manhã</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Quarta-feira Tarde"> Tarde</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Quarta-feira Noite"> Noite</label></td>
+                    <td><label><input type="text" name="local"></label></td>
+                </tr>
+                <tr>
+                    <td>Quinta-feira</td>
+                    <td><label><input type="checkbox" name="schedule" value="Quinta-feira Manhã"> Manhã</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Quinta-feira Tarde"> Tarde</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Quinta-feira Noite"> Noite</label></td>
+                    <td><label><input type="text" name="local"></label></td>
+                </tr>
+                <tr>
+                    <td>Sexta-feira</td>
+                    <td><label><input type="checkbox" name="schedule" value="Sexta-feira Manhã"> Manhã</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Sexta-feira Tarde"> Tarde</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Sexta-feira Noite"> Noite</label></td>
+                    <td><label><input type="text" name="local"></label></td>
+                </tr>
+                <tr>
+                    <td>Sábado</td>
+                    <td><label><input type="checkbox" name="schedule" value="Sábado Manhã"> Manhã</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Sábado Tarde"> Tarde</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Sábado Noite"> Noite</label></td>
+                    <td><label><input type="text" name="local"></label></td>
+                </tr>
+                <tr>
+                    <td>Domingo</td>
+                    <td><label><input type="checkbox" name="schedule" value="Domingo Manhã"> Manhã</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Domingo Tarde"> Tarde</label></td>
+                    <td><label><input type="checkbox" name="schedule" value="Domingo Noite"> Noite</label></td>
+                    <td><label><input type="text" name="local"></label></td>
+                </tr>
+            </tbody>
+	</div>	
 	{% csrf_token %}
 	<button type="submit">Criar</button>
 </form>
