@@ -9,13 +9,16 @@ from django.template import loader
 
 def PortalExtensaoView(request):
     projetos = projeto.objects.all()
+    cursos = projeto.objects.values_list('curso', flat=True).distinct()
     return render(request, 'admin-cards.html', {
         'current_page': 'public-cards',
-        'portalExtensaoUnicap_app_projetos': projetos
+        'portalExtensaoUnicap_app_projetos': projetos,
+        'cursos': cursos,
     })
 
 def AdminPageView(request):
     projetos = projeto.objects.all()
+    cursos = projeto.objects.values_list('curso', flat=True).distinct()
     return render(request, 'admin-cards.html', {
         'current_page': 'admin-cards',
         'portalExtensaoUnicap_app_projetos': projetos

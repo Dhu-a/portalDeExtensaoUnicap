@@ -20,12 +20,14 @@
 			<span class="area-icon"
 				><img src="{% static 'graphics/area.svg' %}"
 			/></span>
-			<select>
+
+			<select name="curso">
 				<option value="">Área</option>
-				<option value="1">Área 1</option>
-				<option value="2">Área 2</option>
-				<option value="3">Área 3</option>
+				{% for curso in cursos %}
+					<option value="{{ curso }}">{{ curso }}</option>
+				{% endfor %}
 			</select>
+
 		</div>
 		<div class="filter-dropdown">
 			<span class="curso-icon"
@@ -74,6 +76,12 @@
 				<option value="bloco-c">Bloco D</option>
 			</select>
 		</div>
+	</div>
+
+	<div class="actions-container">
+		<button type="button" id="botao_filtrar">
+			<img src="{% static 'graphics/eye.svg' %}" /> Filtrar
+		</button>
 	</div>
 </div>
 <div class="project-listing">
