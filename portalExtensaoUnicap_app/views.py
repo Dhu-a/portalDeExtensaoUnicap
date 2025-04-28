@@ -98,9 +98,30 @@ def ProjectCreate(request):
                             ch_semanal_estudante=ch_semanal_estudante, data_inicio=data_inicio,
                             data_termino=data_termino, instagram=instagram, contato=contato, 
                             formulario=formulario, aceitando=aceitando)
-        
         projetoNovo.save()
 
+
+        dias_e_turnos = request.POST.getlist('schedule')
+        locais1 = request.POST.getlist('local')
+        print(len(dias_e_turnos))
+        dias_da_semana = []
+        turnos = []
+        locais2 = []
+
+        for i in range(len(dias_e_turnos)):
+            print("for",i)
+            dias_da_semana.append(dias_e_turnos[i].split(" ")[0])
+            turnos.append(dias_e_turnos[i].split(" ")[1])
+            if i!=0 and dias_da_semana[i] == dias_da_semana[i-1]:
+                print("dia repetido",i)
+                locais2.append(locais1[i-1])
+            else:
+                locais2.append(locais1[i])
+            
+            diasNovos = dias(dia=dias_da_semana[i], turno=turnos[i], lugar=locais2[i], id_projeto=projetoNovo)
+            diasNovos.save()
+
+        '''
         dias_e_turnos = request.POST.getlist('schedule')
         locais = request.POST.getlist('local')
         j = 0
@@ -112,6 +133,6 @@ def ProjectCreate(request):
             diasNovos = dias(dia=dias_da_semana, turno=turno, lugar=local, id_projeto=projetoNovo)
             diasNovos.save()
             print(j,dias_da_semana)
-        print("dias",dias)
+        print("dias",dias)'''
         return redirect('/')
     return render(request, 'create.html')
