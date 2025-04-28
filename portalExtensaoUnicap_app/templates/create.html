@@ -57,7 +57,7 @@
 		<label for="formulary">Formulário</label>
 		<input type="text" name="formulary" />
 	</div>
-	<div>
+	<div class="input-container">
 		<table>
             <thead>
                 <tr>
@@ -119,7 +119,11 @@
                     <td><label><input type="text" name="local"></label></td>
                 </tr>
             </tbody>
-	</div>	
+	</div>
+	<div class="input-container">
+		<label for="availability">Aceitando alunos novos:</label>
+		<input type="checkbox" name="availability">
+	</div>
 	{% csrf_token %}
 	<button type="submit">Criar</button>
 </form>

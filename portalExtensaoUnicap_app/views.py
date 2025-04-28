@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
-from .models import projeto
+from .models import projeto, dias
 from django.http import HttpResponse
 from django.template import loader
 
@@ -17,7 +17,7 @@ def PortalExtensaoView(request):
         projetos = projetos.filter(curso=curso_filter)
 
     search_name = request.GET.get('search_name') #filtrar por nome digitado
-    print(search_name);
+    print(search_name)
     if search_name:
         projetos = projetos.filter(titulo__icontains=search_name)
     
@@ -87,13 +87,31 @@ def ProjectCreate(request):
         instagram = request.POST.get('instagram')
         contato = request.POST.get('contact')
         formulario = request.POST.get('formulary')
-
+        aceitando = request.POST.get('availability')
+        if aceitando == "on":
+            aceitando = True
+        else:
+            aceitando = False
         projetoNovo = projeto(identificacao_unica=identificacao_unica, titulo=titulo, proposta=proposta, 
                             curso=curso, coordenador=coordenador,ch_total=ch_total, 
                             ch_semanal_docente=ch_semanal_docente, 
                             ch_semanal_estudante=ch_semanal_estudante, data_inicio=data_inicio,
                             data_termino=data_termino, instagram=instagram, contato=contato, 
-                            formulario=formulario)
+                            formulario=formulario, aceitando=aceitando)
+        
         projetoNovo.save()
+
+        dias_e_turnos = request.POST.getlist('schedule')
+        locais = request.POST.getlist('local')
+        j = 0
+        for i in dias_e_turnos:
+            dias_da_semana = i.split(" ")[0]
+            turno = i.split(" ")[1]
+            local = locais[j]
+            j = j + 1
+            diasNovos = dias(dia=dias_da_semana, turno=turno, lugar=local, id_projeto=projetoNovo)
+            diasNovos.save()
+            print(j,dias_da_semana)
+        print("dias",dias)
         return redirect('/')
     return render(request, 'create.html')

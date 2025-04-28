@@ -22,6 +22,8 @@ class projeto(models.Model):
     contato=models.TextField(blank=False)
     formulario=models.TextField(blank=True)
 
+    aceitando=models.BooleanField(default=True)
+
     #imagem
     def image_url(projeto):
         file_name = f"{projeto.nome}.png" #???
@@ -33,8 +35,11 @@ class dias(models.Model):
     id=models.BigAutoField(primary_key=True)
     id_projeto=models.ForeignKey(projeto, on_delete=models.CASCADE)
 
-    dia=models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(7)]); # 1==dom, 2==seg, etc, 7==sab
-    turno=models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(3)]); # 1==dia, 2==tarde, 3==noite
+    #dia=models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(7)]); # 1==dom, 2==seg, etc, 7==sab
+    #turno=models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(3)]); # 1==dia, 2==tarde, 3==noite
+    dia=models.TextField(max_length=13,blank=False,null=False)
+    turno=models.TextField(max_length=5,blank=False,null=False)
+    
     lugar=models.TextField(max_length=300, blank=False, null=False)
 
 
