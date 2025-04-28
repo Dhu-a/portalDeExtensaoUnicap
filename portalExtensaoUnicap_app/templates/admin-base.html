@@ -11,18 +11,20 @@
 		</button>
 	</div>
 
+	<form id="filter-form" method="get">
 	<div class="filters">
 		<div class="search-box">
-			<span class="search-icon"><img src="{% static 'graphics/lupa.svg' %}"></span>
-			<input type="text" placeholder="Nome" />
-		</div>
+            <span class="search-icon"><img src="{% static 'graphics/lupa.svg' %}"></span>
+            <input type="text" name="search" placeholder="Nome" />
+        </div>
 		<div class="filter-dropdown">
-			<span class="area-icon"
-				><img src="{% static 'graphics/area.svg' %}"
+			<span class="curso-icon"
+				><img src="{% static 'graphics/school.svg' %}"
 			/></span>
+			
 
 			<select name="curso">
-				<option value="">Área</option>
+				<option value="">Curso</option>
 				{% for curso in cursos %}
 					<option value="{{ curso }}">{{ curso }}</option>
 				{% endfor %}
@@ -30,14 +32,14 @@
 
 		</div>
 		<div class="filter-dropdown">
-			<span class="curso-icon"
-				><img src="{% static 'graphics/school.svg' %}"
+			<span class="area-icon"
+				><img src="{% static 'graphics/area.svg' %}"
 			/></span>
 			<select>
-				<option value="">Curso</option>
-				<option value="1">Medicina</option>
-				<option value="2">Arquitetura</option>
-				<option value="3">Computação</option>
+				<option value="">Área</option>
+				<option value="1">Área 1</option>
+				<option value="2">Área 2</option>
+				<option value="3">Área 3</option>
 			</select>
 		</div>
 		<div class="filter-dropdown">
@@ -77,12 +79,12 @@
 			</select>
 		</div>
 	</div>
-
 	<div class="actions-container">
-		<button type="button" id="botao_filtrar">
+		<button type="submit" id="botao_filtrar">
 			<img src="{% static 'graphics/eye.svg' %}" /> Filtrar
 		</button>
 	</div>
+	</form>
 </div>
 <div class="project-listing">
 	{% block projetos %} {% endblock %}

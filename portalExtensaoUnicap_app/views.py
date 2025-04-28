@@ -10,6 +10,12 @@ from django.template import loader
 def PortalExtensaoView(request):
     projetos = projeto.objects.all()
     cursos = projeto.objects.values_list('curso', flat=True).distinct()
+    
+
+    curso_filter = request.GET.get('curso') #filtrar pelo curso selecionado
+    if curso_filter:
+        projetos = projetos.filter(curso=curso_filter)
+    
     return render(request, 'admin-cards.html', {
         'current_page': 'public-cards',
         'portalExtensaoUnicap_app_projetos': projetos,
@@ -19,9 +25,16 @@ def PortalExtensaoView(request):
 def AdminPageView(request):
     projetos = projeto.objects.all()
     cursos = projeto.objects.values_list('curso', flat=True).distinct()
+    
+
+    curso_filter = request.GET.get('curso')
+    if curso_filter:
+        projetos = projetos.filter(curso=curso_filter)
+    
     return render(request, 'admin-cards.html', {
-        'current_page': 'admin-cards',
-        'portalExtensaoUnicap_app_projetos': projetos
+        'current_page': 'public-cards',
+        'portalExtensaoUnicap_app_projetos': projetos,
+        'cursos': cursos,
     })
 #def AdminTable(request):
 #    return render(request, 'admin-table.html',{'current_page':'admin-table'})
