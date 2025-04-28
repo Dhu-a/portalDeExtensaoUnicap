@@ -15,6 +15,11 @@ def PortalExtensaoView(request):
     curso_filter = request.GET.get('curso') #filtrar pelo curso selecionado
     if curso_filter:
         projetos = projetos.filter(curso=curso_filter)
+
+    search_name = request.GET.get('search_name') #filtrar por nome digitado
+    print(search_name);
+    if search_name:
+        projetos = projetos.filter(titulo__icontains=search_name)
     
     return render(request, 'admin-cards.html', {
         'current_page': 'public-cards',
