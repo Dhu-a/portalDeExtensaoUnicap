@@ -31,7 +31,7 @@
 			</select>
 
 		</div>
-		<div class="filter-dropdown">
+		<div class="filter-dropdown"> <!-- area -->
 			<span class="area-icon"
 				><img src="{% static 'graphics/area.svg' %}"
 			/></span>
@@ -42,7 +42,7 @@
 				<option value="3">Área 3</option>
 			</select>
 		</div>
-		<div class="filter-dropdown">
+		<div class="filter-dropdown"> <!-- turno -->
 			<span class="shift-icon"
 				><img src="{% static 'graphics/shift.svg' %}"
 			/></span>
@@ -53,7 +53,7 @@
 				<option value="Noite">Noite</option>
 			</select>
 		</div>
-		<div class="filter-dropdown">
+		<div class="filter-dropdown"> <!-- dias -->
 			<span class="days-icon"
 				><img src="{% static 'graphics/calendar.svg' %}"
 			/></span>
@@ -68,7 +68,7 @@
 				<option value="Domingo">Domingo</option>
 			</select>
 		</div>
-		<div class="filter-dropdown">
+		<div class="filter-dropdown"> <!-- local -->
 			<span class="location-icon"
 				><img src="{% static 'graphics/place.svg' %}"
 			/></span>
@@ -80,6 +80,16 @@
 				<option value="Bloco D">Bloco D</option>
 				<option value="Bloco G">Bloco G</option>
 				<option value="Bloco J">Bloco J</option>
+			</select>
+		</div>
+		<div class="filter-dropdown"> <!-- vagas -->
+			<span class="area-icon"
+				><img src="{% static 'graphics/area.svg' %}"
+			/></span>
+			<select name="vagas">
+				<option value="">Vagas</option>
+				<option value="1">Vagas abertas</option>
+				<option value="0">Todos os projetos</option>
 			</select>
 		</div>
 	</div>

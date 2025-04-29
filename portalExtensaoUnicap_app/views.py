@@ -11,25 +11,35 @@ def PortalExtensaoView(request):
     projetos = projeto.objects.all()
     cursos=projeto.objects.values_list('curso', flat=True).distinct()
     
-    turno_filter=request.GET.get('turno') #filtrar pelo turno selecionado
+#filtrar pelo turno selecionado
+    turno_filter=request.GET.get('turno')
     if turno_filter:
         projetos=projetos.filter(dias__turno=turno_filter).distinct()
 
-    dia_filter=request.GET.get('dia') #filtrar pelo dia selecionado
+#filtrar pelo dia selecionado
+    dia_filter=request.GET.get('dia')
     if dia_filter:
         projetos=projetos.filter(dias__dia=dia_filter).distinct()
 
-    local_filter=request.GET.get('local') #filtrar pelo local selecionado
+#filtrar pelo local selecionado
+    local_filter=request.GET.get('local')
     if local_filter:
         projetos=projetos.filter(dias__lugar=local_filter).distinct()
 
-    curso_filter=request.GET.get('curso') #filtrar pelo curso selecionado
+#filtrar pelo curso selecionado
+    curso_filter=request.GET.get('curso')
     if curso_filter:
         projetos=projetos.filter(curso=curso_filter)
 
-    search_name=request.GET.get('search_name') #filtrar por nome digitado
+#filtrar por nome digitado
+    search_name=request.GET.get('search_name')
     if search_name:
         projetos=projetos.filter(titulo__icontains=search_name)
+
+#filtrar por vagas abertas
+    vagas_filter=request.GET.get('vagas');
+    if vagas_filter=="1":
+        projetos=projetos.filter(aceitando=True);
     
     return render(request, 'admin-cards.html', {
         'current_page': 'public-cards',
