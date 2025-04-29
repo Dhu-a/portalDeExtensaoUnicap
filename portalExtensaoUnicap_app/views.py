@@ -15,9 +15,13 @@ def PortalExtensaoView(request):
     if turno_filter:
         projetos=projetos.filter(dias__turno=turno_filter).distinct()
 
-    dia_filter=request.GET.get('dia') #filtrar pelo turno selecionado
+    dia_filter=request.GET.get('dia') #filtrar pelo dia selecionado
     if dia_filter:
         projetos=projetos.filter(dias__dia=dia_filter).distinct()
+
+    local_filter=request.GET.get('local') #filtrar pelo local selecionado
+    if local_filter:
+        projetos=projetos.filter(dias__lugar=local_filter).distinct()
 
     curso_filter=request.GET.get('curso') #filtrar pelo curso selecionado
     if curso_filter:
