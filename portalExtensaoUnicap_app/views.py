@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .models import projeto, dias
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.template import loader
 
 # Create your views here.
@@ -136,3 +136,55 @@ def ProjectCreate(request):
         print("dias",dias)'''
         return redirect('/')
     return render(request, 'create.html')
+
+def projectUpdate(request, projectId):
+    if request.method == "POST":
+        titulo = request.POST.get('project-name')
+        proposta = request.POST.get('proposal')
+        curso = request.POST.get('degree')
+        coordenador = request.POST.get('professor-name')
+        ch_total = request.POST.get('total-hours')
+        ch_docente = request.POST.get('weekly-hours-professor')
+        ch_estudante = request.POST.get('weekly-hours-student')
+        data_inicio = request.POST.get('start-date')
+        data_termino = request.POST.get('end-date')
+        insta = request.POST.get('instagram')
+        contato = request.POST.get('contact')
+        form = request.POST.get('formulary')
+        aceitando = request.POST.get('availability')
+        dias = request.POST.get('schedule')
+        local = request.POST.get('local')
+        disponibilidade = True
+        if aceitando == 'off':
+            disponibilidade = False
+        
+        try:
+            project = projeto.objects.all().get(id=projectId)
+            project.titulo=titulo
+            project.proposta=proposta
+            project.curso=curso
+            project.coordenador=coordenador
+            project.ch_total=ch_total
+            project.ch_semanal_docente=ch_docente
+            project.ch_semanal_estudante=ch_estudante
+            project.data_inicio=data_inicio
+            project.data_termino=data_termino
+            project.instagram=insta
+            project.contato=contato
+            project.form=form
+            project.aceitando=disponibilidade
+            project.save()
+        except projeto.DoesNotExist:
+            raise Http404("Projeto não encontrado.")
+        
+        try:
+            days = dias.objects.all().get(id_projeto=projectId)
+            diasDaSemana = dias.split(" ")[0]
+            for i in range(0, len(dias)):
+                days.dia(diasDaSemana[i])
+            
+        except dias.DoesNotExist:
+            pass
+        
+        
+    return (request)        
