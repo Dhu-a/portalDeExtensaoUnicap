@@ -9,23 +9,28 @@ from django.template import loader
 
 def PortalExtensaoView(request):
     projetos = projeto.objects.all()
-    cursos = projeto.objects.values_list('curso', flat=True).distinct()
+    cursos=projeto.objects.values_list('curso', flat=True).distinct()
     
+    turno_filter=request.GET.get('turno') #filtrar pelo turno selecionado
+    print(turno_filter);
+    print(type(turno_filter));
+    if turno_filter:
+        projetos=projetos.filter(dias__turno=turno_filter).distinct()
 
-    curso_filter = request.GET.get('curso') #filtrar pelo curso selecionado
+    curso_filter=request.GET.get('curso') #filtrar pelo curso selecionado
     if curso_filter:
-        projetos = projetos.filter(curso=curso_filter)
+        projetos=projetos.filter(curso=curso_filter)
 
-    search_name = request.GET.get('search_name') #filtrar por nome digitado
-    print(search_name)
+    search_name=request.GET.get('search_name') #filtrar por nome digitado
     if search_name:
-        projetos = projetos.filter(titulo__icontains=search_name)
+        projetos=projetos.filter(titulo__icontains=search_name)
     
     return render(request, 'admin-cards.html', {
         'current_page': 'public-cards',
         'portalExtensaoUnicap_app_projetos': projetos,
         'cursos': cursos,
     })
+
 
 def AdminPageView(request):
     projetos = projeto.objects.all()
