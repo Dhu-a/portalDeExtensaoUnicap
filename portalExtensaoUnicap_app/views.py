@@ -12,10 +12,12 @@ def PortalExtensaoView(request):
     cursos=projeto.objects.values_list('curso', flat=True).distinct()
     
     turno_filter=request.GET.get('turno') #filtrar pelo turno selecionado
-    print(turno_filter);
-    print(type(turno_filter));
     if turno_filter:
         projetos=projetos.filter(dias__turno=turno_filter).distinct()
+
+    dia_filter=request.GET.get('dia') #filtrar pelo turno selecionado
+    if dia_filter:
+        projetos=projetos.filter(dias__dia=dia_filter).distinct()
 
     curso_filter=request.GET.get('curso') #filtrar pelo curso selecionado
     if curso_filter:
