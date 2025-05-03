@@ -173,7 +173,7 @@ def projectUpdate(request, projectId):
         contato = request.POST.get('contact')
         form = request.POST.get('formulary')
         aceitando = request.POST.get('availability')
-        dias = request.POST.get('schedule')
+        days = request.POST.get('schedule')
         local = request.POST.get('local')
         disponibilidade = True
         if aceitando == 'off':
@@ -199,13 +199,17 @@ def projectUpdate(request, projectId):
             raise Http404("Projeto não encontrado.")
         
         try:
-            days = dias.objects.all().get(id_projeto=projectId)
-            diasDaSemana = dias.split(" ")[0]
-            for i in range(0, len(dias)):
-                days.dia(diasDaSemana[i])
+            d = dias.objects.all().get(id=projectId)
+            diasSemana = days.split(" ")[0]
+            turnos = days.split(" ")[1]
             
+            for i in range(len(days)):
+                d.turno = turnos[i]
+                if diasSemana[i] != dias[i+1]:
+                    d.dia=diasSemana[i]
+                    d.lugar=local[i]
+            
+            d.save()
         except dias.DoesNotExist:
             pass
-        
-        
     return (request)        
