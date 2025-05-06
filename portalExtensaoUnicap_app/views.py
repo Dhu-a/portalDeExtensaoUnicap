@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
-from .models import projeto, dias
+from .models import projeto, dias,areas
 from django.http import HttpResponse, Http404
 from django.template import loader
 
@@ -10,7 +10,14 @@ from django.template import loader
 def PortalExtensaoView(request):
     projetos = projeto.objects.all()
     cursos=projeto.objects.values_list('curso', flat=True).distinct()
+    areas_lista=areas.objects.values_list('area', flat=True).distinct();
     
+
+#filtrar pela area selecionada
+    area_filter=request.GET.get('area')
+    if area_filter:
+        projetos=projetos.filter(areas__area=area_filter).distinct()
+
 #filtrar pelo turno selecionado
     turno_filter=request.GET.get('turno')
     if turno_filter:
@@ -45,6 +52,7 @@ def PortalExtensaoView(request):
         'current_page': 'public-cards',
         'portalExtensaoUnicap_app_projetos': projetos,
         'cursos': cursos,
+        'areas_lista': areas_lista,
     })
 
 
@@ -98,6 +106,7 @@ def ProjectCreate(request):
         identificacao_unica = request.POST.get('identifier')
         titulo = request.POST.get('project-name')
         proposta = request.POST.get('proposal')
+        area = request.POST.get('area')
         curso = request.POST.get('degree')
         coordenador = request.POST.get('professor-name')
         ch_total = request.POST.get('total-hours')
@@ -121,6 +130,9 @@ def ProjectCreate(request):
                             formulario=formulario, aceitando=aceitando)
         projetoNovo.save()
 
+        #add na table de area mas ele soh ta aceitando 1 area, ajeitar isso dps
+        areaNovo=areas(id_projeto=projetoNovo, area=area);
+        areaNovo.save();
 
         dias_e_turnos = request.POST.getlist('schedule')
         locais1 = request.POST.getlist('local')

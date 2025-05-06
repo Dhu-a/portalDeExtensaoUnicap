@@ -35,11 +35,13 @@
 			<span class="area-icon"
 				><img src="{% static 'graphics/area.svg' %}"
 			/></span>
-			<select>
+
+
+			<select name="area">
 				<option value="">Área</option>
-				<option value="1">Área 1</option>
-				<option value="2">Área 2</option>
-				<option value="3">Área 3</option>
+				{% for area in areas_lista%}
+					<option value="{{ area }}">{{ area }}</option>
+				{% endfor %}
 			</select>
 		</div>
 		<div class="filter-dropdown"> <!-- turno -->
