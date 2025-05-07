@@ -1,139 +1,141 @@
 {% extends 'base.html' %} {% block conteudo %} {% load static %}
-<form action="{% url 'ProjectCreate' %}" method="post" enctype="multipart/form-data">
-	<h2>Crie um novo projeto</h2>
-	<div class="input-container">
-		<label for="identifier">Identificador </label>
-		<input type="text" name="identifier" />
-	</div>
-	<div class="input-container">
-		<label for="project-name">Nome do Projeto </label>
-		<input type="text" name="project-name" />
-	</div>
-	<div class="input-container">
-		<label for="professor-name">Professor Responsável</label>
-		<input type="text" name="professor-name" />
-	</div>
-	<div class="input-container">
-		<label for="proposal">Proposta</label>
-		<textarea name="proposal"> </textarea>
-	</div>
-	<div class="input-container">
-		<label for="area">Área</label>
-		<input type="text" name="area" />
-	</div>
-	<div class="input-container">
-		<select name="degree">
-			<option value="Medicina">Medicina</option>
-			<option value="Ciência da Computação">Ciência da Computação</option>
-			<option value="Arquitetura">Arquitetura</option>
-		</select>
-	</div>
-	<div class="input-container">
-		<label for="total-hours">Carga Horária Total</label>
-		<input type="number" name="total-hours" />
-	</div>
-	<div class="input-container">
-		<label for="weekly-hours-professor">Carga Horária Semanal Docente</label>
-		<input type="number" name="weekly-hours-professor" />
-	</div>
-	<div class="input-container">
-		<label for="weekly-hours-student">Carga Horária Semanal Estudante</label>
-		<input type="number" name="weekly-hours-student" />
-	</div>
-	<div class="input-container">
-		<label for="start-date">Data de Início</label>
-		<input type="date" name="start-date" />
-	</div>
-	<div class="input-container">
-		<label for="end-date">Data de Término</label>
-		<input type="date" name="end-date" />
-	</div>
+<div class="form-container">
+	<form action="{% url 'ProjectCreate' %}" method="post" enctype="multipart/form-data" class="box-form">
+		<h2>Crie um novo projeto</h2>
+		<div class="input-container">
+			<label for="identifier">Identificador </label>
+			<input type="text" name="identifier" />
+		</div>
+		<div class="input-container">
+			<label for="project-name">Nome do Projeto </label>
+			<input type="text" name="project-name" />
+		</div>
+		<div class="input-container">
+			<label for="professor-name">Professor Responsável</label>
+			<input type="text" name="professor-name" />
+		</div>
+		<div class="input-container">
+			<label for="proposal">Proposta</label>
+			<textarea name="proposal"> </textarea>
+		</div>
+		<div class="input-container">
+			<label for="area">Área</label>
+			<input type="text" name="area" />
+		</div>
+		<div class="input-container">
+			<select name="degree">
+				<option value="Medicina">Medicina</option>
+				<option value="Ciência da Computação">Ciência da Computação</option>
+				<option value="Arquitetura">Arquitetura</option>
+			</select>
+		</div>
+		<div class="input-container">
+			<label for="total-hours">Carga Horária Total</label>
+			<input type="number" name="total-hours" />
+		</div>
+		<div class="input-container">
+			<label for="weekly-hours-professor">Carga Horária Semanal Docente</label>
+			<input type="number" name="weekly-hours-professor" />
+		</div>
+		<div class="input-container">
+			<label for="weekly-hours-student">Carga Horária Semanal Estudante</label>
+			<input type="number" name="weekly-hours-student" />
+		</div>
+		<div class="input-container">
+			<label for="start-date">Data de Início</label>
+			<input type="date" name="start-date" />
+		</div>
+		<div class="input-container">
+			<label for="end-date">Data de Término</label>
+			<input type="date" name="end-date" />
+		</div>
 
-	<div class="input-container">
-		<label for="instagram">Instagram</label>
-		<input type="text" name="instagram" />
-	</div>
-	<div class="input-container">
-		<label for="contact">Contato</label>
-		<input type="text" name="contact" />
-	</div>
-	<div class="input-container">
-		<label for="formulary">Formulário</label>
-		<input type="text" name="formulary" />
-	</div>
-	<div class="input-container">
-		<table>
-            <thead>
-                <tr>
-                    <th>Dia</th>
-                    <th>Manhã</th>
-                    <th>Tarde</th>
-                    <th>Noite</th>
-					<th>Local</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Segunda-feira</td>
-                    <td><label><input type="checkbox" name="schedule" value="Segunda-feira Manhã"> Manhã</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Segunda-feira Tarde"> Tarde</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Segunda-feira Noite"> Noite</label></td>
-                    <td><label><input type="text" name="local"></label></td>
-                </tr>
-                <tr>
-                    <td>Terça-feira</td>
-                    <td><label><input type="checkbox" name="schedule" value="Terça-feira Manhã"> Manhã</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Terça-feira Tarde"> Tarde</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Terça-feira Noite"> Noite</label></td>
-                    <td><label><input type="text" name="local"></label></td>
-                </tr>
-                <tr>
-                    <td>Quarta-feira</td>
-                    <td><label><input type="checkbox" name="schedule" value="Quarta-feira Manhã"> Manhã</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Quarta-feira Tarde"> Tarde</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Quarta-feira Noite"> Noite</label></td>
-                    <td><label><input type="text" name="local"></label></td>
-                </tr>
-                <tr>
-                    <td>Quinta-feira</td>
-                    <td><label><input type="checkbox" name="schedule" value="Quinta-feira Manhã"> Manhã</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Quinta-feira Tarde"> Tarde</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Quinta-feira Noite"> Noite</label></td>
-                    <td><label><input type="text" name="local"></label></td>
-                </tr>
-                <tr>
-                    <td>Sexta-feira</td>
-                    <td><label><input type="checkbox" name="schedule" value="Sexta-feira Manhã"> Manhã</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Sexta-feira Tarde"> Tarde</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Sexta-feira Noite"> Noite</label></td>
-                    <td><label><input type="text" name="local"></label></td>
-                </tr>
-                <tr>
-                    <td>Sábado</td>
-                    <td><label><input type="checkbox" name="schedule" value="Sábado Manhã"> Manhã</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Sábado Tarde"> Tarde</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Sábado Noite"> Noite</label></td>
-                    <td><label><input type="text" name="local"></label></td>
-                </tr>
-                <tr>
-                    <td>Domingo</td>
-                    <td><label><input type="checkbox" name="schedule" value="Domingo Manhã"> Manhã</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Domingo Tarde"> Tarde</label></td>
-                    <td><label><input type="checkbox" name="schedule" value="Domingo Noite"> Noite</label></td>
-                    <td><label><input type="text" name="local"></label></td>
-                </tr>
-            </tbody>
-			<script>
-				function addToStr(){
-					
-				}
-			</script>
-	</div>
-	<div class="input-container">
-		<label for="availability">Aceitando alunos novos:</label>
-		<input type="checkbox" name="availability">
-	</div>
-	{% csrf_token %}
-	<button type="submit">Criar</button>
-</form>
+		<div class="input-container">
+			<label for="instagram">Instagram</label>
+			<input type="text" name="instagram" />
+		</div>
+		<div class="input-container">
+			<label for="contact">Contato</label>
+			<input type="text" name="contact" />
+		</div>
+		<div class="input-container">
+			<label for="formulary">Formulário</label>
+			<input type="text" name="formulary" />
+		</div>
+		<div class="input-container">
+			<table>
+				<thead>
+					<tr>
+						<th>Dia</th>
+						<th>Manhã</th>
+						<th>Tarde</th>
+						<th>Noite</th>
+						<th>Local</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Segunda-feira</td>
+						<td><label><input type="checkbox" name="schedule" value="Segunda-feira Manhã"> Manhã</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Segunda-feira Tarde"> Tarde</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Segunda-feira Noite"> Noite</label></td>
+						<td><label><input type="text" name="local"></label></td>
+					</tr>
+					<tr>
+						<td>Terça-feira</td>
+						<td><label><input type="checkbox" name="schedule" value="Terça-feira Manhã"> Manhã</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Terça-feira Tarde"> Tarde</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Terça-feira Noite"> Noite</label></td>
+						<td><label><input type="text" name="local"></label></td>
+					</tr>
+					<tr>
+						<td>Quarta-feira</td>
+						<td><label><input type="checkbox" name="schedule" value="Quarta-feira Manhã"> Manhã</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Quarta-feira Tarde"> Tarde</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Quarta-feira Noite"> Noite</label></td>
+						<td><label><input type="text" name="local"></label></td>
+					</tr>
+					<tr>
+						<td>Quinta-feira</td>
+						<td><label><input type="checkbox" name="schedule" value="Quinta-feira Manhã"> Manhã</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Quinta-feira Tarde"> Tarde</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Quinta-feira Noite"> Noite</label></td>
+						<td><label><input type="text" name="local"></label></td>
+					</tr>
+					<tr>
+						<td>Sexta-feira</td>
+						<td><label><input type="checkbox" name="schedule" value="Sexta-feira Manhã"> Manhã</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Sexta-feira Tarde"> Tarde</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Sexta-feira Noite"> Noite</label></td>
+						<td><label><input type="text" name="local"></label></td>
+					</tr>
+					<tr>
+						<td>Sábado</td>
+						<td><label><input type="checkbox" name="schedule" value="Sábado Manhã"> Manhã</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Sábado Tarde"> Tarde</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Sábado Noite"> Noite</label></td>
+						<td><label><input type="text" name="local"></label></td>
+					</tr>
+					<tr>
+						<td>Domingo</td>
+						<td><label><input type="checkbox" name="schedule" value="Domingo Manhã"> Manhã</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Domingo Tarde"> Tarde</label></td>
+						<td><label><input type="checkbox" name="schedule" value="Domingo Noite"> Noite</label></td>
+						<td><label><input type="text" name="local"></label></td>
+					</tr>
+				</tbody>
+				<script>
+					function addToStr(){
+						
+					}
+				</script>
+		</div>
+		<div class="input-container">
+			<label for="availability">Aceitando alunos novos:</label>
+			<input type="checkbox" name="availability">
+		</div>
+		{% csrf_token %}
+		<button type="submit">Criar</button>
+	</form>
+</div>
 {% endblock %}
