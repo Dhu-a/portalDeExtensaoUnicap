@@ -24,11 +24,11 @@ No momento, é possível acessar o nosso [protótipo](https://www.figma.com/prot
 - [x] 1. Como administrador, desejo realizar login para poder executar tarefas administrativas.
 - [x] 2. Como administrador, desejo poder criar, editar e apagar projetos.
 - [x] 3. Como administrador, desejo visualizar os projetos em formato de tabela e cards.
-- [ ] 4. Como usuário, desejo filtrar projetos por tema e área de atuação.
-- [ ] 5. Como usuário, desejo filtrar projetos por local.
-- [ ] 6. Como usuário, desejo filtrar projetos por horário (turno, faixa de horas, dias da semana).
-- [ ] 7. Como usuário, desejo buscar projetos pelo nome.
-- [ ] 8. Como usuário, desejo visualizar projetos com vagas abertas e ocultar os sem vagas.
+- [x] 4. Como usuário, desejo filtrar projetos por tema e área de atuação.
+- [x] 5. Como usuário, desejo filtrar projetos por local.
+- [x] 6. Como usuário, desejo filtrar projetos por horário (turno, faixa de horas, dias da semana).
+- [x] 7. Como usuário, desejo buscar projetos pelo nome.
+- [x] 8. Como usuário, desejo visualizar projetos com vagas abertas e ocultar os sem vagas.
 - [ ] 9. Como usuário, desejo ver detalhes sobre um projeto de extensão e acessar links relacionados.
 - [ ] 10. Como usuário, desejo saber quando mais vagas estarão disponíveis em projetos lotados.
 
