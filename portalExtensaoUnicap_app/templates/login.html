@@ -1,16 +1,17 @@
 {% extends 'base.html' %} {% block conteudo %} {% load static %}
 <div class="form-container">
 	<form action="{% url 'login' %}" method="post" class="box-form">
+		{% csrf_token %}
 		<h2>Log In</h2>
 		<div class="input-container">
 			<label for="email">Email</label>
-			<input type="email" name="email" />
+			<input type="email" name="email" required/>
 		</div>
 		<div class="input-container">
 			<label for="password">Senha</label>
-			<input type="password" name="password" />
+			<input type="password" name="password" required/>
 		</div>
-		<button type="button">Entrar</button>
+		<button type="submit">Entrar</button>
 	</form>
 </div>
 {% endblock %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import projeto, dias,areas
 from django.http import HttpResponse, Http404
@@ -82,7 +83,8 @@ def LoginView(request):
     if request.method == "POST":
         email = request.POST['email']
         password = request.POST['password']
-        user = authenticate(request=request, email=email, password=password)
+        username = User.objects.get(email=email)
+        user = authenticate(request, username=username.username, password=password)
 
         if user is not None:
             login(request, user)
