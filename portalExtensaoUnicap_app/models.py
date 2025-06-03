@@ -1,6 +1,8 @@
 from django.db import models
 from django.templatetags.static import static
 from django.core.validators import MinValueValidator, MaxValueValidator
+import os
+from django.conf import settings
 
 class projeto(models.Model):
     id=models.BigAutoField(primary_key=True)
@@ -25,8 +27,8 @@ class projeto(models.Model):
     aceitando=models.BooleanField(default=True)
 
     #imagem
-    def image_url(projeto):
-        file_name = f"{projeto.nome}.png" #???
+    def image_url(self):
+        file_name = f"{self.identificacao_unica}.png"
         image_path = f"graphics/img_projeto/{file_name}"
         return static(image_path)
 

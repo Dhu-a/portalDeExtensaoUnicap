@@ -274,3 +274,174 @@ button:hover {
         max-width: 100%;
     }
 }
+
+/* --- Projeto (página individual) --- */
+.project-outer {
+    background: var(--main-color);
+    border-radius: 28px;
+    border: 5px solid var(--accent-color);
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    margin: 2.5rem auto 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 6px 32px rgba(105,0,19,0.10);
+}
+.project-header {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+.project-title {
+    color: var(--accent-color);
+    font-size: 2.3em;
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+.project-coord {
+    color: #222;
+    font-size: 1.15em;
+    margin-bottom: 0.7em;
+    font-weight: 500;
+}
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7em;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+.project-tags .tag {
+    background: #fff;
+    border: 2px solid var(--accent-color);
+    border-radius: 16px;
+    padding: 0.3em 1.1em;
+    color: #333;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    font-weight: 500;
+}
+.project-divider {
+    border: none;
+    border-top: 2px solid #bdbdbd;
+    margin: 0 0 2rem 0;
+}
+.project-main-content {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+.project-image-container {
+    flex: 1 1 350px;
+    max-width: 420px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.project-image {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    background: #eee;
+}
+.project-side-cards {
+    flex: 2 1 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+.project-card {
+    background: #fff;
+    border: 4px solid var(--accent-color);
+    border-radius: 22px;
+    padding: 2.2rem 2.5rem;
+    box-shadow: 0 2px 16px rgba(157, 118, 40, 0.07);
+    margin-bottom: 0.5rem;
+}
+.project-card h3 {
+    color: var(--main-color);
+    margin-bottom: 0.7em;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.project-card.proposta {
+    min-height: 120px;
+}
+.project-card.contato .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.08em;
+    padding: 0.3em 0.5em;
+    border-radius: 8px;
+    transition: background 0.15s;
+}
+.contact-link:hover {
+    background: #f3e7c2;
+}
+.delete-form {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5em;
+}
+.delete-btn {
+    background: #fff0f0;
+    color: #a00;
+    border: 1.5px solid #a00;
+    border-radius: 10px;
+    padding: 0.5em 1.2em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+.delete-btn:hover {
+    background: #ffd6d6;
+    color: #fff;
+}
+@media (max-width: 1100px) {
+    .project-outer {
+        padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    }
+    .project-main-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .project-image-container, .project-side-cards {
+        max-width: 100%;
+        width: 100%;
+    }
+    .project-card {
+        padding: 1.2rem 1rem;
+    }
+}
+@media (max-width: 600px) {
+    .project-outer {
+        padding: 0.5rem 0.1rem;
+    }
+    .project-header {
+        margin-top: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .project-title {
+        font-size: 1.3em;
+    }
+    .project-main-content {
+        padding: 0 0.5em;
+    }
+    .project-card {
+        padding: 0.8rem 0.5rem;
+    }
+}

@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block conteudo %} {% load static %}
 <div class="admin-menu">
 	<div class="actions-container">
+		{% if user.is_authenticated %}
 		<a href="{% url 'create' %}">
 			<button type="button">
 				<img src="{% static 'graphics/plus.svg' %}" /> Novo Projeto
@@ -9,6 +10,7 @@
 		<button type="button" id="admin-mode-button">
 			<img src="{% static 'graphics/eye.svg' %}" /> Modo Tabela
 		</button>
+		{% endif %}
 	</div>
 
 	<form id="filter-form" method="get">

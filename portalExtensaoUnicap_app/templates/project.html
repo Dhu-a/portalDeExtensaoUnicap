@@ -1,62 +1,63 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 {% load static %}
-<div class="basic-info">
-	<h2>{{ projeto.titulo }}</h2>
-	<p>{{ projeto.coordenador }}</p>
-	<div class="tag-container">
-		{% for area in projeto.areas.all %}
-		<div class="tag">
-			<img src="{% static 'graphics/school.svg' %}" />
-			<p>{{ area.area }}</p>
+<div class="project-outer">
+	<div class="project-header">
+		<h2 class="project-title">{{ projeto.titulo }}</h2>
+		<p class="project-coord">Dr. Prof. {{ projeto.coordenador }}</p>
+		<div class="project-tags">
+			{% for area in projeto.areas.all %}
+			<span class="tag"><img src="{% static 'graphics/school.svg' %}" /> {{ area.area }}</span>
+			{% endfor %}
 		</div>
-		{% endfor %}
 	</div>
-</div>
-<div class="extra-info">
-	<img />
-	<div class="right-extra-info">
-		<div class="proposition">
-			<h3>Proposta</h3>
-			<p>{{ projeto.proposta }}</p>
-		</div>
-		<div class="contact">
-			<h3>Informações para Contato</h3>
-			{% if projeto.formulario %}
-			<a class="contact-link" href="{{ projeto.formulario }}" target="_blank">
-				<img src="{% static 'graphics/forms.svg' %}" />
-				<p>Formulário de Inscrição</p>
-			</a>
-			{% endif %}
-			{% if projeto.instagram %}
-			<a class="contact-link" href="{{ projeto.instagram }}" target="_blank">
-				<img src="{% static 'graphics/brand-instagram.svg' %}" />
-				<p>Perfil do Instagram</p>
-			</a>
-			{% endif %}
-			{% if projeto.contato %}
-			<a class="contact-link" href="mailto:{{ projeto.contato }}">
-				<img src="{% static 'graphics/mail.svg' %}" />
-				<p>Email para contato</p>
-			</a>
+	<hr class="project-divider" />
+	<div class="project-main-content">
+		<div class="project-image-container">
+			{% if projeto.image_url %}
+				<img class="project-image" src="{{ projeto.image_url }}" alt="Imagem do projeto" onerror="this.onerror=null;this.src='{% static 'graphics/placeholder.jpg' %}';" />
 			{% endif %}
 		</div>
-
-		<form action="{{projeto.id}}" method="get" onsubmit="return showWindow()">
-			{% csrf_token %}
-			<input type="hidden" id="delete" name="delete" value="{{projeto.id}}">
-			<button type="submit">Deletar</button>
-		</form>
-		<script>
-			function showWindow(){
-				if (window.confirm("Deseja deletar o projeto?") == true){
-					return true;
-				} else {
-					return false;
+		<div class="project-side-cards">
+			<div class="project-card proposta">
+				<h3>Proposta</h3>
+				<p>{{ projeto.proposta }}</p>
+			</div>
+			<div class="project-card contato">
+				<h3>Informações para contato</h3>
+				<div class="contact-links">
+					{% if projeto.formulario %}
+					<a class="contact-link" href="{{ projeto.formulario }}" target="_blank">
+						<img src="{% static 'graphics/forms.svg' %}" /> Formulário de Inscrição
+					</a>
+					{% endif %}
+					{% if projeto.instagram %}
+					<a class="contact-link" href="{{ projeto.instagram }}" target="_blank">
+						<img src="{% static 'graphics/brand-instagram.svg' %}" /> Perfil do Instagram
+					</a>
+					{% endif %}
+					{% if projeto.contato %}
+					<a class="contact-link" href="mailto:{{ projeto.contato }}">
+						<img src="{% static 'graphics/mail.svg' %}" /> Email para contato
+					</a>
+					{% endif %}
+				</div>
+			</div>
+			<form action="{{projeto.id}}" method="get" onsubmit="return showWindow()" class="delete-form">
+				{% csrf_token %}
+				<input type="hidden" id="delete" name="delete" value="{{projeto.id}}">
+				<button type="submit" class="delete-btn">Deletar</button>
+			</form>
+			<script>
+				function showWindow(){
+					if (window.confirm("Deseja deletar o projeto?")){
+						return true;
+					} else {
+						return false;
+					}
 				}
-			}
-		</script>
-
+			</script>
+		</div>
 	</div>
 </div>
 {% endblock %}
